@@ -3,31 +3,35 @@
   <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact Us - MidPulse Labs</title>
+        <title>Contact - MidPulse Labs</title>
 
         <!-- SEO Meta Tags -->
         <meta name="description" content="Get in touch with MidPulse Labs. Send us a message about your app development needs or any inquiries.">
         <meta name="robots" content="index, follow">
         <link rel="canonical" href="https://midpulselabs.com/contact/">
 
-        <!-- Custom Fonts -->
+        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 
       <style>
-                :root {
-                              --primary-purple: #667eea;
-                              --secondary-purple: #764ba2;
-                              --accent-cyan: #4facfe;
-                              --accent-pink: #f093fb;
-                              --dark: #1a1a2e;
-                }
-
                 * {
                               margin: 0;
                               padding: 0;
                               box-sizing: border-box;
+                }
+
+                :root {
+                              --black: #0a0a0a;
+                              --white: #ffffff;
+                              --gray-50: #fafafa;
+                              --gray-100: #f5f5f5;
+                              --gray-200: #e8e8e8;
+                              --gray-400: #999999;
+                              --gray-600: #666666;
+                              --gray-800: #1a1a1a;
+                              --accent: #0a0a0a;
                 }
 
                 html {
@@ -35,374 +39,262 @@
                 }
 
                 body {
-                              font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-                              background: #1a1a2e;
-                              color: var(--dark);
-                              line-height: 1.7;
-                              min-height: 100vh;
-                              overflow-x: hidden;
-                              position: relative;
-                }
-
-                /* Gradient Mesh Background */
-                body::before {
-                              content: '';
-                              position: fixed;
-                              top: 0;
-                              left: 0;
-                              width: 100%;
-                              height: 100%;
-                              background:
-                                                radial-gradient(circle at 20% 30%, rgba(102, 126, 234, 0.4) 0%, transparent 50%),
-                                                radial-gradient(circle at 80% 70%, rgba(118, 75, 162, 0.4) 0%, transparent 50%),
-                                                radial-gradient(circle at 50% 50%, rgba(79, 172, 254, 0.2) 0%, transparent 50%),
-                                                linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                              z-index: -1;
-                              animation: meshMove 20s ease-in-out infinite;
-                }
-
-                @keyframes meshMove {
-                              0%, 100% { transform: scale(1) rotate(0deg); }
-                              50% { transform: scale(1.1) rotate(5deg); }
+                              font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+                              background: var(--white);
+                              color: var(--black);
+                              line-height: 1.6;
+                              -webkit-font-smoothing: antialiased;
+                              -moz-osx-font-smoothing: grayscale;
                 }
 
                 .container {
                               max-width: 1400px;
                               margin: 0 auto;
-                              padding: 0 40px;
+                              padding: 0 60px;
                 }
 
-                /* Glassmorphism Header */
+                /* Header */
                 header {
-                              background: rgba(255, 255, 255, 0.08);
-                              backdrop-filter: blur(20px);
-                              -webkit-backdrop-filter: blur(20px);
-                              border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                              padding: 1.5rem 0;
+                              border-bottom: 1px solid var(--gray-200);
+                              background: var(--white);
                               position: sticky;
                               top: 0;
                               z-index: 1000;
-                              transition: all 0.3s ease;
-                }
-
-                header.scrolled {
-                              background: rgba(26, 26, 46, 0.95);
-                              backdrop-filter: blur(30px);
-                              box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
                 }
 
                 header .container {
                               display: flex;
                               justify-content: space-between;
                               align-items: center;
+                              padding-top: 30px;
+                              padding-bottom: 30px;
                 }
 
                 .logo {
-                              font-family: 'Space Grotesk', sans-serif;
-                              font-size: 1.8rem;
+                              font-family: 'Syne', sans-serif;
+                              font-size: 22px;
                               font-weight: 700;
-                              background: linear-gradient(135deg, #fff 0%, var(--accent-cyan) 100%);
-                              -webkit-background-clip: text;
-                              -webkit-text-fill-color: transparent;
-                              background-clip: text;
+                              color: var(--black);
                               text-decoration: none;
-                              letter-spacing: -0.02em;
-                              transition: all 0.3s ease;
-                }
-
-                .logo:hover {
-                              transform: translateY(-2px);
-                              filter: brightness(1.2);
+                              letter-spacing: -0.03em;
                 }
 
                 nav {
                               display: flex;
-                              gap: 3rem;
+                              gap: 50px;
                               align-items: center;
                 }
 
                 nav a {
-                              color: rgba(255, 255, 255, 0.8);
+                              color: var(--gray-600);
                               text-decoration: none;
-                              font-weight: 500;
-                              font-size: 0.95rem;
-                              letter-spacing: 0.02em;
-                              position: relative;
-                              transition: color 0.3s ease;
-                }
-
-                nav a::after {
-                              content: '';
-                              position: absolute;
-                              bottom: -5px;
-                              left: 0;
-                              width: 0;
-                              height: 2px;
-                              background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink));
-                              transition: width 0.3s ease;
+                              font-size: 15px;
+                              font-weight: 400;
+                              transition: color 0.2s;
+                              letter-spacing: 0.01em;
                 }
 
                 nav a:hover {
-                              color: white;
+                              color: var(--black);
                 }
 
-                nav a:hover::after {
-                              width: 100%;
-                }
-
-                /* Hero Section */
+                /* Hero */
                 .hero {
-                              padding: 100px 0 60px 0;
-                              text-align: center;
+                              padding: 140px 0 120px 0;
+                              border-bottom: 1px solid var(--gray-200);
                 }
 
                 .hero h1 {
-                              font-family: 'Space Grotesk', sans-serif;
-                              font-size: clamp(2.5rem, 5vw, 4rem);
-                              font-weight: 700;
-                              color: white;
-                              margin-bottom: 1rem;
-                              letter-spacing: -0.03em;
+                              font-family: 'Syne', sans-serif;
+                              font-size: clamp(56px, 7vw, 96px);
+                              font-weight: 800;
+                              line-height: 0.95;
+                              letter-spacing: -0.04em;
+                              margin-bottom: 35px;
                 }
 
                 .hero p {
-                              font-size: 1.3rem;
-                              color: rgba(255, 255, 255, 0.7);
-                              font-weight: 300;
+                              font-size: 19px;
+                              font-weight: 400;
+                              color: var(--gray-600);
+                              max-width: 560px;
+                              line-height: 1.65;
                 }
 
                 /* Contact Section */
-                .contact-section {
-                              padding: 60px 0 100px 0;
+                .contact {
+                              padding: 100px 0;
                 }
 
                 .contact-grid {
                               display: grid;
-                              grid-template-columns: 1fr 1fr;
-                              gap: 60px;
-                              align-items: start;
-                }
-
-                .contact-info {
-                              background: rgba(255, 255, 255, 0.05);
-                              backdrop-filter: blur(20px);
-                              border: 1px solid rgba(255, 255, 255, 0.1);
-                              border-radius: 20px;
-                              padding: 50px;
+                              grid-template-columns: 1fr 2fr;
+                              gap: 100px;
                 }
 
                 .contact-info h2 {
-                              font-family: 'Space Grotesk', sans-serif;
-                              font-size: 2rem;
-                              color: white;
-                              margin-bottom: 1.5rem;
-                              font-weight: 600;
-                }
-
-                .contact-info p {
-                              color: rgba(255, 255, 255, 0.7);
-                              margin-bottom: 2.5rem;
-                              line-height: 1.8;
-                              font-weight: 300;
+                              font-family: 'Syne', sans-serif;
+                              font-size: 38px;
+                              font-weight: 700;
+                              margin-bottom: 50px;
+                              letter-spacing: -0.03em;
                 }
 
                 .info-item {
-                              display: flex;
-                              align-items: center;
-                              gap: 1.5rem;
-                              margin-bottom: 2rem;
+                              margin-bottom: 40px;
                 }
 
-                .info-icon {
-                              width: 50px;
-                              height: 50px;
-                              background: linear-gradient(135deg, var(--accent-cyan), var(--accent-pink));
-                              border-radius: 12px;
-                              display: flex;
-                              align-items: center;
-                              justify-content: center;
-                              font-size: 1.5rem;
-                              flex-shrink: 0;
-                }
-
-                .info-content h3 {
-                              font-family: 'Space Grotesk', sans-serif;
-                              color: white;
-                              font-size: 1.1rem;
-                              margin-bottom: 0.3rem;
+                .info-label {
+                              font-size: 12px;
                               font-weight: 600;
+                              text-transform: uppercase;
+                              letter-spacing: 0.1em;
+                              color: var(--gray-400);
+                              margin-bottom: 10px;
                 }
 
-                .info-content p {
-                              color: rgba(255, 255, 255, 0.7);
-                              margin: 0;
-                              font-size: 0.95rem;
+                .info-value {
+                              font-size: 18px;
+                              color: var(--black);
                 }
 
-                /* Contact Form */
-                .contact-form-wrapper {
-                              background: rgba(255, 255, 255, 0.05);
-                              backdrop-filter: blur(20px);
-                              border: 1px solid rgba(255, 255, 255, 0.1);
-                              border-radius: 20px;
-                              padding: 50px;
+                .info-value a {
+                              color: var(--black);
+                              text-decoration: none;
                 }
 
+                .info-value a:hover {
+                              color: var(--gray-600);
+                              text-decoration: underline;
+                }
+
+                /* Form */
                 .form-group {
-                              margin-bottom: 2rem;
+                              margin-bottom: 40px;
                 }
 
                 .form-group label {
                               display: block;
-                              color: white;
+                              font-size: 12px;
                               font-weight: 600;
-                              margin-bottom: 0.8rem;
-                              font-size: 0.95rem;
+                              text-transform: uppercase;
+                              letter-spacing: 0.1em;
+                              margin-bottom: 15px;
+                              color: var(--black);
                 }
 
                 .form-group input,
                 .form-group textarea {
                               width: 100%;
-                              padding: 16px 20px;
-                              background: rgba(255, 255, 255, 0.08);
-                              border: 1px solid rgba(255, 255, 255, 0.15);
-                              border-radius: 12px;
-                              color: white;
-                              font-size: 1rem;
-                              font-family: 'Plus Jakarta Sans', sans-serif;
-                              transition: all 0.3s ease;
-                }
-
-                .form-group input::placeholder,
-                .form-group textarea::placeholder {
-                              color: rgba(255, 255, 255, 0.4);
+                              padding: 18px 0;
+                              border: none;
+                              border-bottom: 2px solid var(--gray-200);
+                              font-family: 'DM Sans', sans-serif;
+                              font-size: 16px;
+                              background: transparent;
+                              transition: border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
                 }
 
                 .form-group input:focus,
                 .form-group textarea:focus {
                               outline: none;
-                              background: rgba(255, 255, 255, 0.12);
-                              border-color: var(--accent-cyan);
-                              box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+                              border-bottom-color: var(--black);
                 }
 
                 .form-group textarea {
                               resize: vertical;
-                              min-height: 160px;
+                              min-height: 120px;
                 }
 
-                .btn {
-                              display: inline-block;
-                              padding: 16px 40px;
-                              font-family: 'Space Grotesk', sans-serif;
-                              font-weight: 600;
-                              font-size: 1rem;
-                              text-decoration: none;
-                              border-radius: 12px;
-                              transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                              position: relative;
-                              overflow: hidden;
-                              letter-spacing: 0.02em;
-                              border: none;
+                .submit-btn {
+                              padding: 20px 44px;
+                              background: var(--black);
+                              color: var(--white);
+                              border: 2px solid var(--black);
+                              font-size: 15px;
+                              font-weight: 500;
                               cursor: pointer;
-                              width: 100%;
+                              transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+                              letter-spacing: 0.01em;
+                              font-family: 'DM Sans', sans-serif;
                 }
 
-                .btn-primary {
-                              background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-pink) 100%);
-                              color: white;
-                              box-shadow: 0 10px 30px rgba(79, 172, 254, 0.3);
+                .submit-btn:hover {
+                              background: var(--gray-800);
+                              border-color: var(--gray-800);
+                              transform: translateY(-2px);
                 }
 
-                .btn-primary:hover {
-                              transform: translateY(-3px);
-                              box-shadow: 0 15px 40px rgba(79, 172, 254, 0.5);
-                }
-
-                .btn:disabled {
-                              opacity: 0.6;
+                .submit-btn:disabled {
+                              background: var(--gray-400);
                               cursor: not-allowed;
-                              transform: none !important;
                 }
 
                 /* Alert */
                 .alert {
-                              padding: 16px 20px;
-                              border-radius: 12px;
-                              margin-bottom: 24px;
+                              padding: 20px;
+                              margin-bottom: 30px;
+                              border: 1px solid;
                               display: none;
-                              font-weight: 500;
                 }
 
                 .alert.show {
                               display: block;
-                              animation: slideIn 0.3s ease-out;
-                }
-
-                @keyframes slideIn {
-                              from {
-                                                opacity: 0;
-                                                transform: translateY(-10px);
-                              }
-                              to {
-                                                opacity: 1;
-                                                transform: translateY(0);
-                              }
                 }
 
                 .alert.success {
-                              background: rgba(79, 172, 254, 0.2);
-                              border: 1px solid var(--accent-cyan);
-                              color: var(--accent-cyan);
+                              background: #f0fdf4;
+                              border-color: #86efac;
+                              color: #166534;
                 }
 
                 .alert.error {
-                              background: rgba(255, 107, 107, 0.2);
-                              border: 1px solid #ff6b6b;
-                              color: #ffaaaa;
+                              background: #fef2f2;
+                              border-color: #fca5a5;
+                              color: #991b1b;
                 }
 
                 /* Footer */
                 footer {
-                              background: rgba(0, 0, 0, 0.3);
-                              backdrop-filter: blur(20px);
-                              border-top: 1px solid rgba(255, 255, 255, 0.1);
-                              padding: 40px 0;
+                              background: var(--black);
+                              color: var(--white);
+                              padding: 80px 0 50px 0;
+                              margin-top: 100px;
+                }
+
+                .footer-content {
                               text-align: center;
-                              margin-top: 60px;
                 }
 
-                footer p {
-                              color: rgba(255, 255, 255, 0.4);
-                              font-size: 0.9rem;
+                .footer-content p {
+                              color: var(--gray-400);
+                              margin-bottom: 20px;
                 }
 
-                footer a {
-                              color: rgba(255, 255, 255, 0.6);
+                .footer-content a {
+                              color: var(--gray-400);
                               text-decoration: none;
-                              margin: 0 15px;
-                              transition: color 0.3s;
+                              margin: 0 20px;
                 }
 
-                footer a:hover {
-                              color: white;
+                .footer-content a:hover {
+                              color: var(--white);
                 }
 
-                /* Mobile Menu Toggle */
+                /* Mobile Menu */
                 .mobile-menu-toggle {
                               display: none;
                               background: none;
                               border: none;
-                              color: white;
-                              font-size: 1.5rem;
+                              font-size: 24px;
                               cursor: pointer;
-                              padding: 0.5rem;
+                              color: var(--black);
                 }
 
-                /* Responsive Design */
+                /* Responsive */
                 @media (max-width: 968px) {
                               .container {
-                                                padding: 0 24px;
+                                                padding: 0 30px;
                               }
 
                               nav {
@@ -412,15 +304,15 @@
                               nav.mobile-open {
                                                 display: flex;
                                                 flex-direction: column;
-                                                position: absolute;
-                                                top: 100%;
+                                                position: fixed;
+                                                top: 81px;
                                                 left: 0;
                                                 right: 0;
-                                                background: rgba(26, 26, 46, 0.98);
-                                                backdrop-filter: blur(20px);
-                                                padding: 2rem;
-                                                gap: 1.5rem;
-                                                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                                                background: var(--white);
+                                                padding: 40px 30px;
+                                                gap: 30px;
+                                                border-bottom: 1px solid var(--gray-200);
+                                                align-items: flex-start;
                               }
 
                               .mobile-menu-toggle {
@@ -429,107 +321,83 @@
 
                               .contact-grid {
                                                 grid-template-columns: 1fr;
-                                                gap: 40px;
-                              }
-
-                              .contact-info,
-                              .contact-form-wrapper {
-                                                padding: 30px;
-                              }
-                }
-
-                @media (max-width: 640px) {
-                              .hero h1 {
-                                                font-size: 2rem;
-                              }
-
-                              .hero p {
-                                                font-size: 1rem;
-                              }
-
-                              .logo {
-                                                font-size: 1.4rem;
+                                                gap: 60px;
                               }
                 }
             </style>
   </head>
   <body>
         <!-- Header -->
-        <header id="header">
+        <header>
                   <div class="container">
                                 <a href="/" class="logo">MidPulse Labs</a>
                                 <nav id="nav">
                                                   <a href="/">Home</a>
-                                                  <a href="/#apps">Apps</a>
+                                                  <a href="/#work">Work</a>
                                                   <a href="/contact">Contact</a>
                                                   <a href="/privacy">Privacy</a>
                                 </nav>
-                                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Menu">
                                                   ☰
                                 </button>
                   </div>
         </header>
 
-        <!-- Hero Section -->
+        <!-- Hero -->
         <section class="hero">
                   <div class="container">
-                                <h1>Get In Touch</h1>
-                                <p>Let's build something amazing together</p>
+                                <h1>Get in touch</h1>
+                                <p>Discuss your project requirements. We respond to all inquiries within 24 hours.</p>
                   </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="contact-section">
+        <!-- Contact -->
+        <section class="contact">
                   <div class="container">
                                 <div class="contact-grid">
-                                                  <!-- Contact Info -->
+                                                  <!-- Info -->
                                                   <div class="contact-info">
-                                                                <h2>Let's Talk</h2>
-                                                                <p>Have a project in mind? We'd love to hear about it. Send us a message and we'll respond as soon as possible.</p>
+                                                                <h2>Get in touch</h2>
 
                                                                 <div class="info-item">
-                                                                              <div class="info-icon">📧</div>
-                                                                              <div class="info-content">
-                                                                                                <h3>Email</h3>
-                                                                                                <p>contact@midpulselabs.com</p>
+                                                                              <div class="info-label">Email</div>
+                                                                              <div class="info-value">
+                                                                                                <a href="mailto:contact@midpulselabs.com">contact@midpulselabs.com</a>
                                                                               </div>
                                                                 </div>
 
                                                                 <div class="info-item">
-                                                                              <div class="info-icon">⏰</div>
-                                                                              <div class="info-content">
-                                                                                                <h3>Response Time</h3>
-                                                                                                <p>We typically respond within 24 hours</p>
-                                                                              </div>
+                                                                              <div class="info-label">Response Time</div>
+                                                                              <div class="info-value">Within 24 hours</div>
                                                                 </div>
                                                   </div>
 
-                                                  <!-- Contact Form -->
-                                                  <div class="contact-form-wrapper">
+                                                  <!-- Form -->
+                                                  <div class="contact-form">
                                                                 <div id="alert" class="alert"></div>
 
                                                                 <form id="contactForm">
                                                                               <div class="form-group">
-                                                                                                <label for="name">Name *</label>
-                                                                                                <input type="text" id="name" name="name" required placeholder="Your name">
+                                                                                                <label for="name">Name</label>
+                                                                                                <input type="text" id="name" name="name" required>
                                                                               </div>
 
                                                                               <div class="form-group">
-                                                                                                <label for="email">Email *</label>
-                                                                                                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                                                                                                <label for="email">Email</label>
+                                                                                                <input type="email" id="email" name="email" required>
                                                                               </div>
 
                                                                               <div class="form-group">
-                                                                                                <label for="subject">Subject *</label>
-                                                                                                <input type="text" id="subject" name="subject" required placeholder="What's this about?">
+                                                                                                <label for="subject">Subject</label>
+                                                                                                <input type="text" id="subject" name="subject" required>
                                                                               </div>
 
                                                                               <div class="form-group">
-                                                                                                <label for="message">Message *</label>
-                                                                                                <textarea id="message" name="message" required placeholder="Tell us more about your project..."></textarea>
+                                                                                                <label for="message">Message</label>
+                                                                                                <textarea id="message" name="message" required></textarea>
                                                                               </div>
 
-                                                                              <button type="submit" class="btn btn-primary" id="submitBtn">
+                                                                              <button type="submit" class="submit-btn" id="submitBtn">
                                                                                                 Send Message
                                                                               </button>
                                                                 </form>
@@ -541,27 +409,20 @@
         <!-- Footer -->
         <footer>
                   <div class="container">
-                                <p>&copy; 2025 MidPulse Labs. All rights reserved.</p>
-                                <p>
-                                                  <a href="/privacy">Privacy Policy</a>
-                                                  <a href="mailto:contact@midpulselabs.com">Email Us</a>
-                                </p>
+                                <div class="footer-content">
+                                                  <p>&copy; 2025 MidPulse Labs. All rights reserved.</p>
+                                                  <div>
+                                                                <a href="/">Home</a>
+                                                                <a href="/privacy">Privacy</a>
+                                                                <a href="mailto:contact@midpulselabs.com">Email</a>
+                                                  </div>
+                                </div>
                   </div>
         </footer>
 
         <!-- Scripts -->
         <script>
-                  // Header scroll effect
-                  window.addEventListener('scroll', () => {
-                                const header = document.getElementById('header');
-                                if (window.scrollY > 50) {
-                                                  header.classList.add('scrolled');
-                                } else {
-                                                  header.classList.remove('scrolled');
-                                }
-                  });
-
-                  // Mobile menu toggle
+                  // Mobile menu
                   const menuToggle = document.getElementById('menuToggle');
                   const nav = document.getElementById('nav');
 
@@ -570,7 +431,6 @@
                                 menuToggle.textContent = nav.classList.contains('mobile-open') ? '✕' : '☰';
                   });
 
-                  // Close mobile menu when clicking a link
                   document.querySelectorAll('nav a').forEach(link => {
                                 link.addEventListener('click', () => {
                                                   nav.classList.remove('mobile-open');
@@ -585,11 +445,9 @@
                                 const submitBtn = document.getElementById('submitBtn');
                                 const alert = document.getElementById('alert');
 
-                                // Disable button during submission
                                 submitBtn.disabled = true;
                                 submitBtn.textContent = 'Sending...';
 
-                                // Get form data
                                 const formData = {
                                                   name: document.getElementById('name').value,
                                                   email: document.getElementById('email').value,
@@ -598,15 +456,13 @@
                                 };
 
                                 try {
-                                                  // Using Web3Forms - replace with your access key
-                                                  // Get your free access key at https://web3forms.com
                                                   const response = await fetch('https://api.web3forms.com/submit', {
                                                                 method: 'POST',
                                                                 headers: {
                                                                               'Content-Type': 'application/json',
                                                                 },
                                                                 body: JSON.stringify({
-                                                                              access_key: 'YOUR_WEB3FORMS_ACCESS_KEY_HERE', // Replace this!
+                                                                              access_key: 'YOUR_WEB3FORMS_ACCESS_KEY_HERE',
                                                                               ...formData,
                                                                               from_name: 'MidPulse Labs Contact Form',
                                                                               subject: `New Contact: ${formData.subject}`
@@ -616,22 +472,20 @@
                                                   const data = await response.json();
 
                                                   if (data.success) {
-                                                                alert.textContent = 'Thank you! Your message has been sent successfully.';
+                                                                alert.textContent = 'Thank you! Your message has been sent.';
                                                                 alert.className = 'alert success show';
                                                                 document.getElementById('contactForm').reset();
                                                   } else {
                                                                 throw new Error('Form submission failed');
                                                   }
                                 } catch (error) {
-                                                  alert.textContent = 'Oops! Something went wrong. Please try again or email us directly at contact@midpulselabs.com';
+                                                  alert.textContent = 'Something went wrong. Please email us directly at contact@midpulselabs.com';
                                                   alert.className = 'alert error show';
                                 }
 
-                                // Re-enable button
                                 submitBtn.disabled = false;
                                 submitBtn.textContent = 'Send Message';
 
-                                // Hide alert after 5 seconds
                                 setTimeout(() => {
                                                   alert.className = 'alert';
                                 }, 5000);
