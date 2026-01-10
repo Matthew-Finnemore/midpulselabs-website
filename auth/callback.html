@@ -70,11 +70,20 @@
   <script>
     (function() {
       // Get the hash fragment (contains access_token and refresh_token)
+      // Supabase sends: #access_token=...&refresh_token=...&type=recovery...
       const hash = window.location.hash;
 
-      // Build the deep link URL
-      const appUrl = 'trustlogger://auth/callback' + hash;
+      // IMPORTANT: Android strips hash fragments from custom URL schemes
+      // Convert hash fragment to query parameters instead
+      let appUrl = 'trustlogger://auth/callback';
 
+      if (hash && hash.length > 1) {
+        // Remove the # and convert to query string format
+        const hashParams = hash.substring(1);
+        appUrl = 'trustlogger://auth/callback?' + hashParams;
+      }
+
+      console.log('Hash fragment:', hash);
       console.log('Redirecting to:', appUrl);
 
       // Set the manual link
