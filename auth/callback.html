@@ -105,6 +105,16 @@
         iframe.src = appUrl;
         document.body.appendChild(iframe);
       }, 100);
+
+      // Try to close the tab after redirect (works in some browsers)
+      setTimeout(function() {
+        window.close();
+        // If still here, show a friendly message
+        setTimeout(function() {
+          document.getElementById('status').textContent = 'You can close this tab now.';
+          document.querySelector('.spinner').style.display = 'none';
+        }, 500);
+      }, 1500);
     })();
   </script>
 </body>
