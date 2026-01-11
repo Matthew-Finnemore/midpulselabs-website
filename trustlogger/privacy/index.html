@@ -384,7 +384,7 @@
         <div class="privacy-content">
                   <div class="privacy-header">
                                 <h1>Privacy Policy for TrustLog</h1>
-                                <p class="last-updated">Last Updated: January 1, 2025</p>
+                                <p class="last-updated">Last Updated: January 11, 2026</p>
                   </div>
 
                   <div class="privacy-body">
@@ -398,27 +398,58 @@
                                 <ul>
                                                   <li><strong>Email address</strong> - Used for authentication and account recovery</li>
                                                   <li><strong>Password</strong> - Stored securely (hashed) for account access</li>
+                                                  <li><strong>Username</strong> - Required on first login (3-30 characters, alphanumeric and underscores only). Your username is publicly searchable by exact match to enable friend discovery</li>
                                                   <li><strong>User ID</strong> - Automatically generated unique identifier</li>
                                 </ul>
 
                                 <h3>2. Location Data</h3>
                                 <p>TrustLog collects and uses your device location to provide core features:</p>
                                 <ul>
-                                                  <li><strong>GPS Coordinates</strong> - To show nearby National Trust sites</li>
-                                                  <li><strong>Location Permissions</strong> - We request ACCESS_FINE_LOCATION and ACCESS_COARSE_LOCATION</li>
-                                                  <li><strong>Usage</strong> - Location data is only collected when you actively use the app's map or "nearby sites" features</li>
+                                                  <li><strong>GPS Coordinates</strong> - To show nearby National Trust sites on maps and in search results</li>
+                                                  <li><strong>Foreground Location</strong> - Collected when you actively use the app's map or "nearby sites" features</li>
+                                                  <li><strong>Background Location (Optional)</strong> - If you enable proximity alerts, we track your location in the background to notify you when you're near National Trust sites (even when the app is closed)</li>
+                                                  <li><strong>Geofencing</strong> - We monitor up to 20 nearest sites within a 10-mile radius of your location. You receive alerts when you enter a 1-mile radius of a site</li>
+                                                  <li><strong>Location Permissions</strong> - We request ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION, and ACCESS_BACKGROUND_LOCATION (Android) or "Always Allow" (iOS) for proximity features</li>
+                                                  <li><strong>Update Frequency</strong> - Geofences are updated only when you move more than 5 kilometers to minimize battery usage</li>
                                                   <li><strong>Storage</strong> - Your current location is temporarily stored on your device and not sent to our servers unless you create a visit record</li>
                                 </ul>
+                                <p><strong>Important:</strong> You can disable background location tracking at any time through your device settings. This will disable proximity alerts but all other features will continue to work.</p>
 
                                 <h3>3. Visit and Activity Data</h3>
                                 <p>We store the following information when you use the app:</p>
                                 <ul>
                                                   <li><strong>Visit records</strong> - Sites you've visited, visit dates, and optional notes</li>
+                                                  <li><strong>Visit participants</strong> - Friends you tag on your visits. Tagged friends can see the full visit details including your notes</li>
+                                                  <li><strong>Visit tags</strong> - When a friend tags you on their visit, you can view the visit details and remove yourself at any time</li>
                                                   <li><strong>Favorites</strong> - National Trust sites you've marked as favorites</li>
-                                                  <li><strong>Visit notes</strong> - Text notes you add to your visit records (maximum 200 words)</li>
+                                                  <li><strong>Visit notes</strong> - Text notes you add to your visit records (maximum 200 words). These are visible to friends you tag on the visit</li>
                                 </ul>
 
-                                <h3>4. Device and Usage Information</h3>
+                                <h3>4. Friend System Data</h3>
+                                <p>TrustLog includes social networking features. We collect and store:</p>
+                                <ul>
+                                                  <li><strong>Friend relationships</strong> - Connections between users who have mutually accepted friend requests</li>
+                                                  <li><strong>Friend requests</strong> - Sent and received requests with status (pending, accepted, rejected, or cancelled)</li>
+                                                  <li><strong>Friend codes</strong> - Unique 8-character redeemable codes you generate to instantly add friends. These codes expire after a set period</li>
+                                                  <li><strong>User search history</strong> - Username searches you perform to find friends (stored temporarily for performance)</li>
+                                                  <li><strong>Friend visibility</strong> - Friends can see visits where you've tagged them, but cannot see your untagged visits, email address, or real-time location</li>
+                                </ul>
+
+                                <h3>5. Push Notification Data</h3>
+                                <p>If you enable notifications, we collect:</p>
+                                <ul>
+                                                  <li><strong>Device push tokens</strong> - Unique identifiers to send notifications to your device via Expo Push Notification Service</li>
+                                                  <li><strong>Notification preferences</strong> - Your settings for friend requests, visit tags, and proximity alerts</li>
+                                                  <li><strong>Notification history</strong> - Records of sent notifications for debugging and delivery verification</li>
+                                </ul>
+                                <p>We send three types of notifications:</p>
+                                <ol>
+                                                  <li><strong>Friend requests</strong> - When someone sends you a friend request</li>
+                                                  <li><strong>Visit tags</strong> - When a friend tags you on a visit</li>
+                                                  <li><strong>Proximity alerts</strong> - When you're near a National Trust site (requires background location permission)</li>
+                                </ol>
+
+                                <h3>6. Device and Usage Information</h3>
                                 <p>We automatically collect:</p>
                                 <ul>
                                                   <li><strong>Device information</strong> - Device model, operating system version</li>
@@ -426,7 +457,7 @@
                                                   <li><strong>Network status</strong> - To enable offline functionality</li>
                                 </ul>
 
-                                <h3>5. Third-Party Services Data</h3>
+                                <h3>7. Third-Party Services Data</h3>
                                 <p>TrustLog integrates with the following third-party services:</p>
 
                                 <h4>Google Services</h4>
@@ -439,8 +470,17 @@
                                 <h4>Supabase (Backend Infrastructure)</h4>
                                 <ul>
                                                   <li><strong>Authentication</strong> - User credentials and session management</li>
-                                                  <li><strong>Database</strong> - Secure storage of your visit records and favorites</li>
+                                                  <li><strong>Database</strong> - Secure storage of your visit records, favorites, and friend relationships</li>
+                                                  <li><strong>Realtime</strong> - WebSocket connections for instant friend request and visit tag notifications</li>
+                                                  <li><strong>Edge Functions</strong> - Automated hourly sync of National Trust site data (4 AM - 7 PM GMT)</li>
                                                   <li><strong>Server location</strong> - United States</li>
+                                </ul>
+
+                                <h4>Expo Push Notification Service</h4>
+                                <ul>
+                                                  <li><strong>Push delivery</strong> - Sends notifications to your device for friend requests, visit tags, and proximity alerts</li>
+                                                  <li><strong>Device tokens</strong> - Stores your device identifier to route notifications</li>
+                                                  <li><strong>Privacy</strong> - Expo does not access notification content; they only handle delivery infrastructure</li>
                                 </ul>
 
                                 <h4>National Trust API</h4>
@@ -454,27 +494,49 @@
                                 <ol>
                                                   <li><strong>Provide core functionality</strong> - Enable visit tracking, favorites, and site discovery</li>
                                                   <li><strong>Personalize your experience</strong> - Show nearby sites based on your location</li>
-                                                  <li><strong>Enable family sharing</strong> - Allow you to share visits and favorites with household members</li>
+                                                  <li><strong>Enable social features</strong> - Allow friend discovery, friend requests, visit tagging, and sharing experiences with friends</li>
+                                                  <li><strong>Send notifications</strong> - Friend requests, visit tags, proximity alerts, and emergency notices about sites</li>
+                                                  <li><strong>Background location services</strong> - Monitor geofences to alert you when near National Trust sites (only if enabled)</li>
                                                   <li><strong>Improve the app</strong> - Analyze usage patterns to fix bugs and add features</li>
-                                                  <li><strong>Send notifications</strong> - Emergency alerts about sites you've favorited (future feature)</li>
                                                   <li><strong>Provide customer support</strong> - Respond to your inquiries and resolve issues</li>
                                 </ol>
 
                                 <h2>Data Sharing and Disclosure</h2>
 
-                                <h3>Family/Household Sharing</h3>
-                                <p>When you join a household group:</p>
+                                <h3>Friend System and Social Features</h3>
+                                <p>TrustLog's friend system allows controlled sharing of your activity:</p>
+
+                                <h4>What Friends Can See</h4>
                                 <ul>
-                                                  <li>Your <strong>visit records</strong> and <strong>favorites</strong> become visible to all group members</li>
-                                                  <li>Group members can see visit dates, notes, and favorited sites</li>
-                                                  <li>You can leave a group at any time from the Profile screen</li>
+                                                  <li><strong>Your username</strong> - Visible to anyone who searches for it</li>
+                                                  <li><strong>Visit tags</strong> - Friends can see visits where you explicitly tagged them, including visit date, site, and notes</li>
+                                                  <li><strong>Friend status</strong> - Whether you are friends with someone</li>
                                 </ul>
+
+                                <h4>What Friends CANNOT See</h4>
+                                <ul>
+                                                  <li><strong>Untagged visits</strong> - Visits where you didn't tag them remain completely private</li>
+                                                  <li><strong>Your email address</strong> - Never shared with other users</li>
+                                                  <li><strong>Your real-time location</strong> - Location is never shared with friends</li>
+                                                  <li><strong>Your favorites</strong> - Your favorited sites are private unless you tag friends on visits to those sites</li>
+                                </ul>
+
+                                <h4>Managing Friend Visibility</h4>
+                                <ul>
+                                                  <li><strong>Removing friends</strong> - You can unfriend anyone at any time from the Friends screen</li>
+                                                  <li><strong>Removing yourself from tags</strong> - If a friend tags you on a visit, you can remove yourself from that visit</li>
+                                                  <li><strong>Rejecting requests</strong> - You can reject friend requests; the sender won't be notified</li>
+                                                  <li><strong>Cancelling requests</strong> - You can cancel pending friend requests you've sent</li>
+                                </ul>
+
+                                <p><strong>Note:</strong> Legacy household sharing groups from previous versions have been replaced by the friend system. If you previously used household groups, your data has been migrated to the new friend-based system.</p>
 
                                 <h3>Third-Party Service Providers</h3>
                                 <p>We share your data with:</p>
                                 <ul>
-                                                  <li><strong>Supabase</strong> - For secure cloud storage and authentication</li>
+                                                  <li><strong>Supabase</strong> - For secure cloud storage, authentication, and real-time notifications</li>
                                                   <li><strong>Google</strong> - For maps, OAuth authentication, and static map images</li>
+                                                  <li><strong>Expo</strong> - For push notification delivery infrastructure (device tokens only, not notification content)</li>
                                                   <li><strong>National Trust</strong> - To fetch publicly available site information</li>
                                 </ul>
 
@@ -486,20 +548,39 @@
                                                   <li><strong>Active accounts</strong> - We retain your data for as long as your account is active</li>
                                                   <li><strong>Deleted accounts</strong> - When you delete your account, all personal data is permanently removed within 30 days</li>
                                                   <li><strong>Visit history</strong> - Retained indefinitely unless you manually delete individual visits or your entire account</li>
-                                                  <li><strong>Cached site data</strong> - Stored locally on your device for 24 hours, then refreshed</li>
+                                                  <li><strong>Friend relationships</strong> - Retained until you or your friend removes the friendship</li>
+                                                  <li><strong>Friend requests</strong> - Pending requests retained for 90 days, then automatically expired. Accepted/rejected/cancelled requests retained for 30 days for audit purposes</li>
+                                                  <li><strong>Friend codes</strong> - Expire after 7 days or when redeemed, whichever comes first</li>
+                                                  <li><strong>Visit participant tags</strong> - Retained until the visit is deleted or you remove yourself from the tag</li>
+                                                  <li><strong>Push notification tokens</strong> - Retained until you log out, uninstall the app, or revoke notification permissions</li>
+                                                  <li><strong>Cached site data</strong> - Stored locally on your device for 1 hour (enriched data) or 24 hours (basic data), then refreshed</li>
                                 </ul>
 
                                 <h2>Your Data Rights (GDPR Compliance)</h2>
                                 <p>If you are in the European Economic Area (EEA), you have the right to:</p>
                                 <ol>
                                                   <li><strong>Access</strong> - Request a copy of your personal data</li>
-                                                  <li><strong>Correction</strong> - Update or correct inaccurate information</li>
+                                                  <li><strong>Correction</strong> - Update or correct inaccurate information (e.g., change your username from Profile settings)</li>
                                                   <li><strong>Deletion</strong> - Delete your account and all associated data via the "Delete My Data" button in Profile settings</li>
                                                   <li><strong>Portability</strong> - Export your visit data (contact support@trustlog.app)</li>
-                                                  <li><strong>Withdraw consent</strong> - Revoke location permissions at any time through device settings</li>
-                                                  <li><strong>Object to processing</strong> - Opt out of non-essential data collection</li>
+                                                  <li><strong>Withdraw consent</strong> - Revoke location or notification permissions at any time through device settings</li>
+                                                  <li><strong>Object to processing</strong> - Opt out of non-essential data collection like proximity alerts</li>
                                 </ol>
                                 <p>To exercise these rights, contact us at <a href="mailto:privacy@trustlog.app">privacy@trustlog.app</a></p>
+
+                                <h3>What Happens When You Delete Your Account</h3>
+                                <p>When you use the "Delete My Data" function, we permanently remove:</p>
+                                <ul>
+                                                  <li>Your email, username, and account credentials</li>
+                                                  <li>All visit records you created (including notes)</li>
+                                                  <li>Your favorites list</li>
+                                                  <li>All friend relationships (you will be removed from your friends' lists)</li>
+                                                  <li>Friend requests you sent or received</li>
+                                                  <li>Visit participant tags (you will be removed from visits where friends tagged you)</li>
+                                                  <li>Push notification tokens</li>
+                                                  <li>Friend codes you generated</li>
+                                </ul>
+                                <p><strong>Note:</strong> If you were tagged on a friend's visit, you will be removed from that visit's participant list, but the visit itself (created by your friend) will remain in their account.</p>
 
                                 <h2>Children's Privacy (COPPA Compliance)</h2>
                                 <p>TrustLog is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal information, please contact us immediately.</p>
@@ -527,22 +608,23 @@
 
                                 <h3>Required Permissions</h3>
                                 <ul>
-                                                  <li><strong>INTERNET</strong> - To fetch site data and sync your visits</li>
-                                                  <li><strong>ACCESS_FINE_LOCATION</strong> - To show nearby National Trust sites</li>
+                                                  <li><strong>INTERNET</strong> - To fetch site data, sync your visits, and communicate with friends</li>
+                                                  <li><strong>ACCESS_FINE_LOCATION</strong> - To show nearby National Trust sites and calculate distances</li>
                                                   <li><strong>ACCESS_COARSE_LOCATION</strong> - For approximate location when GPS is unavailable</li>
                                 </ul>
 
                                 <h3>Optional Permissions</h3>
                                 <ul>
-                                                  <li><strong>READ_EXTERNAL_STORAGE</strong> - To select photos for visit records (if enabled)</li>
-                                                  <li><strong>WRITE_EXTERNAL_STORAGE</strong> - To cache site data for offline use</li>
+                                                  <li><strong>ACCESS_BACKGROUND_LOCATION (Android) / "Always Allow" Location (iOS)</strong> - Required for proximity alerts to monitor when you're near National Trust sites, even when the app is closed. You can disable this in device settings without affecting other features</li>
+                                                  <li><strong>POST_NOTIFICATIONS (Android 13+)</strong> - To send friend requests, visit tag notifications, and proximity alerts</li>
                                 </ul>
 
                                 <h3>Permissions We Do NOT Request</h3>
                                 <ul>
                                                   <li><strong>RECORD_AUDIO</strong> - We do not access your microphone</li>
-                                                  <li><strong>CAMERA</strong> - Not used (future feature for visit photos)</li>
+                                                  <li><strong>CAMERA</strong> - Not used in the current version</li>
                                                   <li><strong>CONTACTS</strong> - We do not access your contacts</li>
+                                                  <li><strong>READ_EXTERNAL_STORAGE / WRITE_EXTERNAL_STORAGE</strong> - No longer required; all storage is handled internally</li>
                                 </ul>
 
                                 <h2>Cookies and Tracking</h2>
@@ -561,13 +643,36 @@
                                 </ul>
                                 <p>Your continued use of the app after changes indicates acceptance of the updated policy.</p>
 
+                                <h2>Notification Preferences and Control</h2>
+                                <p>TrustLog gives you granular control over notifications. You can manage your preferences from the app settings:</p>
+
+                                <h3>Notification Types You Can Control</h3>
+                                <ul>
+                                                  <li><strong>Friend Requests</strong> - Receive notifications when someone sends you a friend request</li>
+                                                  <li><strong>Visit Tags</strong> - Get notified when a friend tags you on a visit</li>
+                                                  <li><strong>Proximity Alerts</strong> - Receive alerts when you're within 1 mile of a National Trust site (requires background location permission)</li>
+                                </ul>
+
+                                <h3>How to Disable Notifications</h3>
+                                <ol>
+                                                  <li><strong>In-app settings</strong> - Go to Profile → Notification Settings to toggle individual notification types</li>
+                                                  <li><strong>Device settings</strong> - Completely disable TrustLog notifications through your device's notification settings</li>
+                                                  <li><strong>Background location</strong> - Disable "Always Allow" location permission to stop proximity alerts while keeping other notifications</li>
+                                </ol>
+
+                                <p><strong>Note:</strong> Disabling proximity alerts also requires turning off background location tracking, as alerts depend on monitoring your location when the app is closed.</p>
+
                                 <h2>Your Choices</h2>
                                 <p>You can control your privacy:</p>
                                 <ol>
-                                                  <li><strong>Disable location</strong> - Turn off location permissions in device settings (nearby sites will not work)</li>
-                                                  <li><strong>Delete data</strong> - Use "Delete My Data" button in Profile → Account Settings</li>
-                                                  <li><strong>Leave household</strong> - Unlink from family sharing groups at any time</li>
-                                                  <li><strong>Logout</strong> - Sign out to stop syncing data</li>
+                                                  <li><strong>Disable foreground location</strong> - Turn off location permissions in device settings (nearby sites and maps will not work)</li>
+                                                  <li><strong>Disable background location</strong> - Turn off "Always Allow" location in device settings (proximity alerts will stop, but all other features continue working)</li>
+                                                  <li><strong>Manage notifications</strong> - Disable specific notification types (friend requests, visit tags, proximity alerts) in app settings or device notification settings</li>
+                                                  <li><strong>Remove friends</strong> - Unfriend anyone from the Friends screen to stop sharing visit tags with them</li>
+                                                  <li><strong>Remove yourself from visit tags</strong> - If a friend tagged you on a visit, you can remove yourself from that visit</li>
+                                                  <li><strong>Change username</strong> - Update your username from Profile settings (subject to availability)</li>
+                                                  <li><strong>Delete data</strong> - Use "Delete My Data" button in Profile → Account Settings to permanently delete your account and all associated data</li>
+                                                  <li><strong>Logout</strong> - Sign out to stop syncing data and remove push notification tokens</li>
                                                   <li><strong>Uninstall</strong> - Remove the app to delete local data (cloud data remains until you delete your account)</li>
                                 </ol>
 
