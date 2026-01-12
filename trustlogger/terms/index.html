@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Terms of Service - MidPulse Labs</title>
+
+        <!-- SEO Meta Tags -->
+        <meta name="description" content="TrustLog Terms of Service for MidPulse Labs, covering eligibility, user conduct, data usage, and legal notices.">
+        <meta name="robots" content="index, follow">
+        <link rel="canonical" href="https://midpulselabs.com/trustlogger/terms/">
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+      <style>
+                * {
+                              margin: 0;
+                              padding: 0;
+                              box-sizing: border-box;
+                }
+
+                :root {
+                              --black: #0a0a0a;
+                              --white: #ffffff;
+                              --gray-50: #fafafa;
+                              --gray-100: #f5f5f5;
+                              --gray-200: #e8e8e8;
+                              --gray-400: #999999;
+                              --gray-600: #666666;
+                              --gray-800: #1a1a1a;
+                              --accent: #0a0a0a;
+                }
+
+                html {
+                              scroll-behavior: smooth;
+                }
+
+                body {
+                              font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+                              background: var(--white);
+                              color: var(--black);
+                              line-height: 1.6;
+                              -webkit-font-smoothing: antialiased;
+                              -moz-osx-font-smoothing: grayscale;
+                }
+
+                .container {
+                              max-width: 1400px;
+                              margin: 0 auto;
+                              padding: 0 60px;
+                }
+
+                /* Header */
+                header {
+                              border-bottom: 1px solid var(--gray-200);
+                              background: var(--white);
+                              position: sticky;
+                              top: 0;
+                              z-index: 1000;
+                }
+
+                header .container {
+                              display: flex;
+                              justify-content: space-between;
+                              align-items: center;
+                              padding-top: 30px;
+                              padding-bottom: 30px;
+                }
+
+                .logo {
+                              font-family: 'Syne', sans-serif;
+                              font-size: 22px;
+                              font-weight: 700;
+                              color: var(--black);
+                              text-decoration: none;
+                              letter-spacing: -0.03em;
+                }
+
+                nav {
+                              display: flex;
+                              gap: 50px;
+                              align-items: center;
+                }
+
+                nav a {
+                              color: var(--gray-600);
+                              text-decoration: none;
+                              font-size: 15px;
+                              font-weight: 400;
+                              transition: color 0.2s;
+                              letter-spacing: 0.01em;
+                }
+
+                nav a:hover {
+                              color: var(--black);
+                }
+
+                /* Hero */
+                .hero {
+                              padding: 140px 0 120px 0;
+                              border-bottom: 1px solid var(--gray-200);
+                }
+
+                .hero h1 {
+                              font-family: 'Syne', sans-serif;
+                              font-size: clamp(42px, 6vw, 68px);
+                              font-weight: 700;
+                              line-height: 1.1;
+                              letter-spacing: -0.03em;
+                              margin-bottom: 25px;
+                }
+
+                .hero p {
+                              font-size: 18px;
+                              font-weight: 400;
+                              color: var(--gray-600);
+                              max-width: 560px;
+                              line-height: 1.6;
+                }
+
+                /* Content Section */
+                .content-section {
+                              padding: 100px 0;
+                }
+
+                .content-wrapper {
+                              max-width: 900px;
+                              margin: 0 auto;
+                }
+
+                .last-updated {
+                              display: inline-block;
+                              padding: 10px 24px;
+                              background: var(--gray-100);
+                              border: 1px solid var(--gray-200);
+                              font-size: 11px;
+                              font-weight: 700;
+                              text-transform: uppercase;
+                              letter-spacing: 0.15em;
+                              margin-bottom: 60px;
+                              color: var(--gray-600);
+                }
+
+                .content-wrapper h2 {
+                              font-family: 'Syne', sans-serif;
+                              font-size: 28px;
+                              font-weight: 700;
+                              margin-top: 60px;
+                              margin-bottom: 24px;
+                              letter-spacing: -0.02em;
+                              line-height: 1.3;
+                }
+
+                .content-wrapper h2:first-of-type {
+                              margin-top: 0;
+                }
+
+                .content-wrapper h3 {
+                              font-family: 'Syne', sans-serif;
+                              font-size: 20px;
+                              font-weight: 600;
+                              margin-top: 40px;
+                              margin-bottom: 16px;
+                              letter-spacing: -0.01em;
+                }
+
+                .content-wrapper p {
+                              color: var(--gray-600);
+                              margin-bottom: 25px;
+                              line-height: 1.75;
+                              font-size: 17px;
+                }
+
+                .content-wrapper ul {
+                              color: var(--gray-600);
+                              margin-bottom: 25px;
+                              margin-left: 30px;
+                              line-height: 1.75;
+                }
+
+                .content-wrapper ul li {
+                              margin-bottom: 12px;
+                              font-size: 17px;
+                }
+
+                .content-wrapper strong {
+                              color: var(--black);
+                              font-weight: 600;
+                }
+
+                .content-wrapper a {
+                              color: var(--black);
+                              text-decoration: underline;
+                              transition: color 0.2s;
+                }
+
+                .content-wrapper a:hover {
+                              color: var(--gray-600);
+                }
+
+                /* Footer */
+                footer {
+                              background: var(--black);
+                              color: var(--white);
+                              padding: 80px 0 50px 0;
+                              margin-top: 120px;
+                }
+
+                .footer-content {
+                              text-align: center;
+                }
+
+                .footer-content p {
+                              color: var(--gray-400);
+                              margin-bottom: 20px;
+                }
+
+                .footer-content a {
+                              color: var(--gray-400);
+                              text-decoration: none;
+                              margin: 0 20px;
+                              transition: color 0.2s;
+                }
+
+                .footer-content a:hover {
+                              color: var(--white);
+                }
+
+                /* Mobile Menu */
+                .mobile-menu-toggle {
+                              display: none;
+                              background: none;
+                              border: none;
+                              font-size: 24px;
+                              cursor: pointer;
+                              color: var(--black);
+                }
+
+                /* Responsive */
+                @media (max-width: 968px) {
+                              .container {
+                                                padding: 0 30px;
+                              }
+
+                              nav {
+                                                display: none;
+                              }
+
+                              nav.mobile-open {
+                                                display: flex;
+                                                flex-direction: column;
+                                                position: fixed;
+                                                top: 81px;
+                                                left: 0;
+                                                right: 0;
+                                                background: var(--white);
+                                                padding: 40px 30px;
+                                                gap: 30px;
+                                                border-bottom: 1px solid var(--gray-200);
+                                                align-items: flex-start;
+                              }
+
+                              .mobile-menu-toggle {
+                                                display: block;
+                              }
+
+                              .content-wrapper {
+                                                padding: 0;
+                              }
+                }
+            </style>
+  </head>
+  <body>
+        <!-- Header -->
+        <header>
+                  <div class="container">
+                                <a href="/" class="logo">MidPulse Labs</a>
+                                <nav id="nav">
+                                                  <a href="/">Home</a>
+                                                  <a href="/#apps">Apps</a>
+                                                  <a href="/contact">Contact</a>
+                                                  <a href="/privacy">Privacy</a>
+                                                  <a href="/trustlogger/terms">Terms</a>
+                                </nav>
+                                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Menu">
+                                                  ☰
+                                </button>
+                  </div>
+        </header>
+
+        <!-- Hero -->
+        <section class="hero">
+                  <div class="container">
+                                <h1>Terms of Service</h1>
+                                <p>These Terms explain what you agree to when you install, access, or interact with TrustLog.</p>
+                  </div>
+        </section>
+
+        <!-- Content -->
+        <section class="content-section">
+                  <div class="container">
+                                <div class="content-wrapper">
+                                                  <div class="last-updated">Last Updated: January 1, 2025</div>
+
+                                                  <p>Thank you for choosing TrustLog. The following Terms of Service govern your access to the TrustLog mobile application and related services provided by MidPulse Labs.</p>
+
+                                                  <h2>1. Acceptance of Terms</h2>
+                                                  <p>By downloading, installing, or using TrustLog ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App.</p>
+
+                                                  <h2>2. Description of Service</h2>
+                                                  <p>TrustLog is a mobile application that helps users:</p>
+                                                  <ul>
+                                                                <li>Discover and explore National Trust properties across the UK</li>
+                                                                <li>Track visits to National Trust sites</li>
+                                                                <li>Save favorite locations</li>
+                                                                <li>Share visit history with family and household members</li>
+                                                                <li>View maps and site details</li>
+                                                  </ul>
+
+                                                  <h2>3. Eligibility</h2>
+                                                  <p>You must be at least 13 years old to use TrustLog. By using the App, you represent and warrant that you meet this age requirement.</p>
+
+                                                  <h2>4. User Accounts</h2>
+                                                  <h3>Account Creation</h3>
+                                                  <ul>
+                                                                <li>You must provide a valid email address and create a password</li>
+                                                                <li>You are responsible for maintaining the confidentiality of your account credentials</li>
+                                                                <li>You are responsible for all activities that occur under your account</li>
+                                                                <li>You must notify us immediately of any unauthorized access to your account</li>
+                                                  </ul>
+
+                                                  <h3>Account Security</h3>
+                                                  <ul>
+                                                                <li>Choose a strong, unique password</li>
+                                                                <li>Do not share your password with others</li>
+                                                                <li>Enable two-factor authentication if available</li>
+                                                  </ul>
+
+                                                  <h3>Account Termination</h3>
+                                                  <ul>
+                                                                <li>You may delete your account at any time through the Profile settings</li>
+                                                                <li>We reserve the right to suspend or terminate accounts that violate these Terms</li>
+                                                                <li>Upon termination, your data will be deleted as outlined in our Privacy Policy</li>
+                                                  </ul>
+
+                                                  <h2>5. User Conduct</h2>
+                                                  <p>You agree NOT to:</p>
+                                                  <ul>
+                                                                <li>Use the App for any illegal or unauthorized purpose</li>
+                                                                <li>Violate any laws in your jurisdiction (including copyright laws)</li>
+                                                                <li>Transmit any viruses, malware, or malicious code</li>
+                                                                <li>Attempt to gain unauthorized access to the App's servers or databases</li>
+                                                                <li>Interfere with or disrupt the App's functionality</li>
+                                                                <li>Impersonate any person or entity</li>
+                                                                <li>Harass, abuse, or harm other users</li>
+                                                                <li>Upload false, misleading, or inaccurate visit information</li>
+                                                                <li>Use automated scripts or bots to access the App</li>
+                                                                <li>Reverse engineer, decompile, or disassemble the App</li>
+                                                  </ul>
+
+                                                  <h2>6. User Content</h2>
+                                                  <h3>Your Visit Notes and Data</h3>
+                                                  <ul>
+                                                                <li>You retain ownership of the visit notes and data you create</li>
+                                                                <li>By using the App, you grant us a license to store, process, and display your content as necessary to provide the service</li>
+                                                                <li>You are responsible for the accuracy of your visit records</li>
+                                                                <li>Do not include sensitive personal information in visit notes</li>
+                                                  </ul>
+
+                                                  <h3>Family Sharing</h3>
+                                                  <ul>
+                                                                <li>When you join a household group, your visits and favorites become visible to group members</li>
+                                                                <li>You acknowledge that group members can view your visit history</li>
+                                                                <li>You can leave a group at any time</li>
+                                                  </ul>
+
+                                                  <h3>Prohibited Content</h3>
+                                                  <p>Do not post or share:</p>
+                                                  <ul>
+                                                                <li>Illegal content</li>
+                                                                <li>Harmful, threatening, or abusive content</li>
+                                                                <li>Content that violates others' privacy or intellectual property rights</li>
+                                                                <li>Spam or commercial advertisements</li>
+                                                  </ul>
+
+                                                  <h2>7. Intellectual Property</h2>
+                                                  <h3>Our Rights</h3>
+                                                  <ul>
+                                                                <li>TrustLog and all related trademarks, logos, and content are owned by us or our licensors</li>
+                                                                <li>The App's design, code, and functionality are protected by copyright and other intellectual property laws</li>
+                                                                <li>You may not copy, modify, distribute, or create derivative works without our permission</li>
+                                                  </ul>
+
+                                                  <h3>Third-Party Content</h3>
+                                                  <ul>
+                                                                <li>National Trust site data and images are property of the National Trust</li>
+                                                                <li>Google Maps content is subject to Google's Terms of Service</li>
+                                                                <li>You agree to comply with all third-party terms when using integrated services</li>
+                                                  </ul>
+
+                                                  <h2>8. National Trust Affiliation</h2>
+                                                  <p><strong>IMPORTANT:</strong> TrustLog is an independent application and is NOT officially affiliated with, endorsed by, or sponsored by the National Trust. All National Trust trademarks, logos, and site information are property of the National Trust.</p>
+
+                                                  <h2>9. Location Services</h2>
+                                                  <ul>
+                                                                <li>The App uses your device location to show nearby National Trust sites</li>
+                                                                <li>Location data is only collected when you use location-based features</li>
+                                                                <li>You can disable location permissions at any time through device settings</li>
+                                                                <li>Disabling location will limit certain features (nearby sites, map navigation)</li>
+                                                  </ul>
+
+                                                  <h2>10. Offline Functionality</h2>
+                                                  <ul>
+                                                                <li>The App caches site data for offline use</li>
+                                                                <li>Actions performed offline are queued and synced when you reconnect to the internet</li>
+                                                                <li>We are not responsible for data loss due to device issues or failed sync</li>
+                                                  </ul>
+
+                                                  <h2>11. Disclaimer of Warranties</h2>
+                                                  <p>THE APP IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO:</p>
+                                                  <ul>
+                                                                <li>Warranties of merchantability or fitness for a particular purpose</li>
+                                                                <li>Accuracy, completeness, or reliability of site information</li>
+                                                                <li>Uninterrupted or error-free operation</li>
+                                                                <li>Security of data transmission</li>
+                                                  </ul>
+                                                  <p>We do not guarantee:</p>
+                                                  <ul>
+                                                                <li>That the App will meet your requirements</li>
+                                                                <li>That site information is always current or accurate</li>
+                                                                <li>That National Trust sites are open or accessible</li>
+                                                                <li>That the App is free from viruses or malicious code</li>
+                                                  </ul>
+
+                                                  <h2>12. Limitation of Liability</h2>
+                                                  <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW:</p>
+                                                  <ul>
+                                                                <li>We are NOT liable for any indirect, incidental, special, or consequential damages</li>
+                                                                <li>Loss of profits, data, or business opportunities</li>
+                                                                <li>Damages resulting from your use or inability to use the App</li>
+                                                                <li>Errors or inaccuracies in site information</li>
+                                                                <li>Travel expenses or losses incurred based on App information</li>
+                                                                <li>Unauthorized access to or alteration of your data</li>
+                                                  </ul>
+                                                  <p>Our total liability shall not exceed the amount you paid to use the App (which is currently zero, as the App is free).</p>
+
+                                                  <h2>13. Indemnification</h2>
+                                                  <p>You agree to indemnify and hold harmless TrustLog, its developers, and affiliates from any claims, damages, or expenses arising from:</p>
+                                                  <ul>
+                                                                <li>Your use of the App</li>
+                                                                <li>Your violation of these Terms</li>
+                                                                <li>Your violation of any third-party rights</li>
+                                                                <li>Content you submit or share through the App</li>
+                                                  </ul>
+
+                                                  <h2>14. Third-Party Services</h2>
+                                                  <p>The App integrates with:</p>
+                                                  <ul>
+                                                                <li><strong>Google Maps</strong> - Subject to Google Maps Terms of Service</li>
+                                                                <li><strong>Supabase</strong> - Subject to Supabase Terms of Service</li>
+                                                                <li><strong>National Trust API</strong> - Subject to National Trust's terms</li>
+                                                  </ul>
+                                                  <p>You are responsible for complying with all third-party terms when using these integrated services.</p>
+
+                                                  <h2>15. Changes to Terms</h2>
+                                                  <p>We reserve the right to modify these Terms at any time. Changes will be effective when posted in the App. We will notify you of material changes via:</p>
+                                                  <ul>
+                                                                <li>In-app notification</li>
+                                                                <li>Email to your registered email address</li>
+                                                                <li>Updated "Last Updated" date at the top of this document</li>
+                                                  </ul>
+                                                  <p>Your continued use of the App after changes constitutes acceptance of the new Terms.</p>
+
+                                                  <h2>16. Termination</h2>
+                                                  <p>We may terminate or suspend your access to the App immediately, without notice, if you:</p>
+                                                  <ul>
+                                                                <li>Violate these Terms</li>
+                                                                <li>Engage in fraudulent or illegal activity</li>
+                                                                <li>Misuse the App or harm other users</li>
+                                                                <li>Request account deletion</li>
+                                                  </ul>
+                                                  <p>Upon termination:</p>
+                                                  <ul>
+                                                                <li>Your right to use the App ceases immediately</li>
+                                                                <li>We may delete your account and data as described in our Privacy Policy</li>
+                                                                <li>Sections that by their nature should survive termination will remain in effect</li>
+                                                  </ul>
+
+                                                  <h2>17. Geographic Restrictions</h2>
+                                                  <p>TrustLog is intended for users in the United Kingdom and displays National Trust sites located in England, Wales, and Northern Ireland. The App may not be available or suitable for users in other locations.</p>
+
+                                                  <h2>18. Governing Law</h2>
+                                                  <p>These Terms are governed by the laws of England and Wales, without regard to conflict of law principles. Any disputes will be resolved in the courts of England and Wales.</p>
+
+                                                  <h2>19. Dispute Resolution</h2>
+                                                  <p>Before filing a claim, you agree to try to resolve disputes informally by contacting us at support@midpulselabs.com. We will attempt to resolve the issue within 30 days.</p>
+                                                  <p>If informal resolution fails, disputes will be resolved through:</p>
+                                                  <ul>
+                                                                <li>Binding arbitration (if applicable in your jurisdiction)</li>
+                                                                <li>Small claims court for claims under the jurisdictional limit</li>
+                                                  </ul>
+
+                                                  <h2>20. Severability</h2>
+                                                  <p>If any provision of these Terms is found to be unenforceable or invalid, that provision will be limited or eliminated to the minimum extent necessary, and the remaining provisions will remain in full force.</p>
+
+                                                  <h2>21. Entire Agreement</h2>
+                                                  <p>These Terms, together with our Privacy Policy, constitute the entire agreement between you and TrustLog regarding the App and supersede any prior agreements.</p>
+
+                                                  <h2>22. No Waiver</h2>
+                                                  <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights.</p>
+
+                                                  <h2>23. Assignment</h2>
+                                                  <p>You may not assign or transfer these Terms without our consent. We may assign these Terms to any affiliate or successor without restriction.</p>
+
+                                                  <h2>24. Contact Information</h2>
+                                                  <p>For questions about these Terms:</p>
+                                                  <ul>
+                                                                <li><strong>Email:</strong> <a href="mailto:support@midpulselabs.com">support@midpulselabs.com</a></li>
+                                                                <li><strong>Privacy Questions:</strong> <a href="mailto:privacy@trustlog.app">privacy@trustlog.app</a></li>
+                                                                <li><strong>GitHub Issues:</strong> <a href="https://github.com/[your-username]/trustlog/issues">github.com/[your-username]/trustlog/issues</a></li>
+                                                  </ul>
+
+                                                  <h2>25. Open Source Licenses</h2>
+                                                  <p>TrustLog uses open-source libraries and components. A full list of third-party licenses is available in the App under Settings → About → Licenses.</p>
+
+                                                  <h2>26. Beta Features</h2>
+                                                  <p>The App may include beta or experimental features. These are provided "as is" and may:</p>
+                                                  <ul>
+                                                                <li>Change or be removed without notice</li>
+                                                                <li>Contain bugs or errors</li>
+                                                                <li>Not function as intended</li>
+                                                  </ul>
+                                                  <p>Use beta features at your own risk.</p>
+
+                                                  <h2>27. Force Majeure</h2>
+                                                  <p>We are not liable for any failure to perform due to circumstances beyond our reasonable control, including:</p>
+                                                  <ul>
+                                                                <li>Natural disasters</li>
+                                                                <li>War or terrorism</li>
+                                                                <li>Government actions</li>
+                                                                <li>Internet or telecommunications failures</li>
+                                                                <li>Third-party service outages (Supabase, Google Maps, National Trust API)</li>
+                                                  </ul>
+
+                                                  <p><strong>By using TrustLog, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service. If you do not agree, please uninstall the App and discontinue use immediately.</strong></p>
+
+                                                  <p><strong>Thank you for using TrustLog to explore the National Trust's wonderful properties!</strong></p>
+                                </div>
+                  </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+                  <div class="container">
+                                <div class="footer-content">
+                                                  <p>&copy; 2025 MidPulse Labs. All rights reserved.</p>
+                                                  <div>
+                                                                <a href="/">Home</a>
+                                                                <a href="/contact">Contact</a>
+                                                                <a href="mailto:contact@midpulselabs.com">Email</a>
+                                                  </div>
+                                </div>
+                  </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script>
+                  // Mobile menu
+                  const menuToggle = document.getElementById('menuToggle');
+                  const nav = document.getElementById('nav');
+
+                  menuToggle.addEventListener('click', () => {
+                                nav.classList.toggle('mobile-open');
+                                menuToggle.textContent = nav.classList.contains('mobile-open') ? '✕' : '☰';
+                  });
+
+                  document.querySelectorAll('nav a').forEach(link => {
+                                link.addEventListener('click', () => {
+                                                  nav.classList.remove('mobile-open');
+                                                  menuToggle.textContent = '☰';
+                                });
+                  });
+        </script>
+  </body>
+</html>
