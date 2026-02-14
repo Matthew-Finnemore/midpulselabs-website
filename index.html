@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>MidPulse Labs - Innovative Mobile & Web App Development</title>
+        <meta name="theme-color" content="#0a0a0a">
 
         <!-- SEO Meta Tags -->
         <meta name="description" content="MidPulse Labs creates innovative mobile and web applications. Explore our portfolio of cutting-edge apps designed to solve real problems.">
@@ -43,7 +44,8 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/assets/site.css">
 
       <style>
                 * {
@@ -58,18 +60,20 @@
                               --gray-50: #fafafa;
                               --gray-100: #f5f5f5;
                               --gray-200: #e8e8e8;
-                              --gray-400: #999999;
-                              --gray-600: #666666;
+                              --gray-400: #6e6e6e;
+                              --gray-600: #4f4f4f;
                               --gray-800: #1a1a1a;
+                              --ring: #2f6fed;
                               --accent: #0a0a0a;
                 }
 
                 html {
                               scroll-behavior: smooth;
+                              scroll-padding-top: 120px;
                 }
 
                 body {
-                              font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+                              font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
                               background: var(--white);
                               color: var(--black);
                               line-height: 1.6;
@@ -81,6 +85,34 @@
                               max-width: 1400px;
                               margin: 0 auto;
                               padding: 0 60px;
+                }
+
+                .skip-link {
+                              position: absolute;
+                              left: 16px;
+                              top: -80px;
+                              background: var(--black);
+                              color: var(--white);
+                              padding: 10px 14px;
+                              text-decoration: none;
+                              z-index: 2000;
+                              border-radius: 8px;
+                              transition: top 0.2s ease;
+                }
+
+                .skip-link:focus-visible {
+                              top: 16px;
+                }
+
+                a,
+                button {
+                              touch-action: manipulation;
+                }
+
+                a:focus-visible,
+                button:focus-visible {
+                              outline: 3px solid var(--ring);
+                              outline-offset: 2px;
                 }
 
                 /* Header */
@@ -101,7 +133,7 @@
                 }
 
                 .logo {
-                              font-family: 'Syne', sans-serif;
+                              font-family: 'Sora', sans-serif;
                               font-size: 22px;
                               font-weight: 700;
                               color: var(--black);
@@ -135,13 +167,14 @@
                 }
 
                 .hero h1 {
-                              font-family: 'Syne', sans-serif;
+                              font-family: 'Sora', sans-serif;
                               font-size: clamp(42px, 6vw, 68px);
                               font-weight: 700;
                               line-height: 1.1;
                               letter-spacing: -0.03em;
                               margin-bottom: 30px;
                               max-width: 900px;
+                              text-wrap: balance;
                 }
 
                 .hero p {
@@ -153,16 +186,10 @@
                               margin-bottom: 50px;
                 }
 
-                .privacy-note {
-                              font-size: 16px;
-                              color: var(--gray-600);
-                              margin-top: 10px;
-                              max-width: 560px;
-                }
-
-                .privacy-note a {
-                              color: var(--black);
-                              text-decoration: underline;
+                .hero-actions {
+                              display: flex;
+                              flex-wrap: wrap;
+                              gap: 16px;
                 }
 
                 .cta {
@@ -173,9 +200,10 @@
                               text-decoration: none;
                               font-size: 15px;
                               font-weight: 500;
-                              transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+                              transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
                               letter-spacing: 0.01em;
                               border: 2px solid var(--black);
+                              border-radius: 12px;
                 }
 
                 .cta:hover {
@@ -188,7 +216,6 @@
                               background: transparent;
                               color: var(--black);
                               border: 2px solid var(--black);
-                              margin-left: 20px;
                 }
 
                 .cta-secondary:hover {
@@ -205,28 +232,29 @@
                 }
 
                 .section-title {
-                              font-family: 'DM Sans', sans-serif;
-                              font-size: 11px;
+                              font-family: 'Sora', sans-serif;
+                              font-size: clamp(30px, 3.4vw, 44px);
                               font-weight: 700;
-                              text-transform: uppercase;
-                              letter-spacing: 0.2em;
-                              margin-bottom: 90px;
-                              color: var(--gray-400);
+                              letter-spacing: -0.02em;
+                              margin-bottom: 54px;
+                              color: var(--black);
+                              line-height: 1.15;
+                              text-wrap: balance;
                 }
 
                 .work-grid {
                               display: grid;
-                              grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-                              gap: 0;
+                              grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                              gap: 24px;
                 }
 
                 .work-item {
                               background: var(--white);
-                              padding: 90px 70px;
-                              transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                              cursor: pointer;
+                              padding: 64px 50px;
+                              transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                               border: 1px solid var(--gray-200);
                               position: relative;
+                              border-radius: 20px;
                 }
 
                 .work-item:hover {
@@ -237,7 +265,7 @@
                 }
 
                 .work-number {
-                              font-family: 'DM Sans', sans-serif;
+                              font-family: 'Sora', sans-serif;
                               font-size: 13px;
                               color: var(--gray-400);
                               margin-bottom: 35px;
@@ -246,21 +274,27 @@
                 }
 
                 .app-logo {
-                              width: 80px;
-                              height: 80px;
-                              border-radius: 16px;
+                              width: 88px;
+                              height: 88px;
+                              border-radius: 20px;
                               margin-bottom: 30px;
                               object-fit: cover;
                               box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
                 }
 
+                .app-logo--playstore {
+                              border-radius: 22%;
+                }
+
                 .work-item h3 {
-                              font-family: 'Syne', sans-serif;
+                              font-family: 'Sora', sans-serif;
                               font-size: 28px;
                               font-weight: 700;
+                              margin-top: 0;
                               margin-bottom: 20px;
-                              letter-spacing: -0.02em;
-                              line-height: 1.2;
+                              letter-spacing: -0.01em;
+                              line-height: 1.25;
+                              overflow: visible;
                 }
 
                 .work-item p {
@@ -270,25 +304,81 @@
                               margin-bottom: 35px;
                 }
 
+                .app-stats {
+                              list-style: none;
+                              display: flex;
+                              flex-wrap: wrap;
+                              gap: 10px;
+                              margin-bottom: 30px;
+                }
+
+                .app-stats li {
+                              font-size: 12px;
+                              font-weight: 700;
+                              letter-spacing: 0.04em;
+                              text-transform: uppercase;
+                              color: var(--black);
+                              background: var(--gray-100);
+                              border: 1px solid var(--gray-200);
+                              border-radius: 999px;
+                              padding: 8px 12px;
+                }
+
                 .work-link {
                               color: var(--black);
                               text-decoration: none;
-                              font-size: 14px;
-                              font-weight: 500;
-                              letter-spacing: 0.05em;
+                              font-size: 12px;
+                              font-weight: 600;
+                              letter-spacing: 0.03em;
                               text-transform: uppercase;
                               display: inline-flex;
                               align-items: center;
+                              justify-content: center;
+                              padding: 10px 14px;
+                              border-radius: 10px;
+                              border: 1px solid var(--gray-200);
+                              background: var(--white);
+                              transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+                }
+
+                .work-link:hover {
+                              transform: translateY(-1px);
+                              background: var(--gray-100);
+                              border-color: var(--gray-400);
+                }
+
+                .stacked-links {
+                              display: flex;
+                              flex-direction: column;
+                              align-items: flex-start;
                               gap: 10px;
                 }
 
-                .work-link:after {
-                              content: '→';
-                              transition: transform 0.2s;
+                .secondary-links {
+                              display: flex;
+                              gap: 8px;
+                              flex-wrap: wrap;
                 }
 
-                .work-item:hover .work-link:after {
-                              transform: translateX(5px);
+                .work-link--primary {
+                              background: var(--black);
+                              color: var(--white);
+                              border-color: var(--black);
+                              font-size: 14px;
+                              font-weight: 700;
+                              padding: 14px 18px;
+                }
+
+                .work-link--primary:hover {
+                              background: var(--gray-800);
+                              border-color: var(--gray-800);
+                }
+
+                .work-link--small {
+                              font-size: 10px;
+                              padding: 6px 10px;
+                              color: var(--gray-600);
+                              border-color: var(--gray-200);
                 }
 
                 /* About Section */
@@ -305,7 +395,7 @@
                 }
 
                 .about h2 {
-                              font-family: 'Syne', sans-serif;
+                              font-family: 'Sora', sans-serif;
                               font-size: 36px;
                               font-weight: 700;
                               letter-spacing: -0.02em;
@@ -317,6 +407,10 @@
                               line-height: 1.75;
                               color: var(--gray-600);
                               font-weight: 400;
+                }
+
+                .about-text-spaced {
+                              margin-top: 30px;
                 }
 
                 /* Footer */
@@ -334,7 +428,7 @@
                 }
 
                 .footer-brand h3 {
-                              font-family: 'Syne', sans-serif;
+                              font-family: 'Sora', sans-serif;
                               font-size: 28px;
                               font-weight: 700;
                               margin-bottom: 20px;
@@ -390,14 +484,28 @@
                               color: var(--white);
                 }
 
+                .footer-compliance {
+                              margin-top: 24px;
+                              color: var(--gray-400);
+                              font-size: 14px;
+                }
+
+                .footer-compliance a {
+                              color: var(--white);
+                              text-decoration: underline;
+                }
+
                 /* Mobile Menu */
                 .mobile-menu-toggle {
                               display: none;
                               background: none;
                               border: none;
                               font-size: 24px;
-                              cursor: pointer;
                               color: var(--black);
+                }
+
+                #apps {
+                              scroll-margin-top: 140px;
                 }
 
                 /* Responsive */
@@ -433,14 +541,12 @@
                               }
 
                               .hero h1 {
-                                                font-size: 48px;
+                                                font-size: 42px;
                               }
 
-                              .cta-secondary {
-                                                margin-left: 0;
-                                                margin-top: 15px;
-                                                display: block;
-                                                text-align: center;
+                              .hero-actions {
+                                                flex-direction: column;
+                                                align-items: stretch;
                               }
 
                               .work-grid {
@@ -448,7 +554,7 @@
                               }
 
                               .work-item {
-                                                padding: 60px 30px;
+                                                padding: 50px 30px;
                               }
 
                               .about-content {
@@ -472,37 +578,46 @@
                                                 margin-top: 10px;
                               }
                 }
+
+                @media (prefers-reduced-motion: reduce) {
+                              html {
+                                                scroll-behavior: auto;
+                              }
+
+                              * {
+                                                animation: none !important;
+                                                transition: none !important;
+                              }
+                }
             </style>
   </head>
   <body>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
         <!-- Header -->
         <header>
                   <div class="container">
                                 <a href="/" class="logo">MidPulse Labs</a>
-                                <nav id="nav">
+                                <nav id="nav" aria-label="Primary">
                                                   <a href="/">Home</a>
                                                   <a href="#apps">Apps</a>
                                                   <a href="/contact">Contact</a>
                                                   <a href="/privacy">Privacy</a>
                                 </nav>
-                                <button class="mobile-menu-toggle" id="menuToggle" aria-label="Menu">
+                                <button class="mobile-menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav" aria-expanded="false">
                                                   ☰
                                 </button>
                   </div>
         </header>
 
+        <main id="main-content">
         <!-- Hero -->
         <section class="hero">
                   <div class="container">
-                                <h1>Apps that help you explore and track your world</h1>
-                                <p>Discover mobile applications designed to enhance your everyday experiences. Available on iOS and Android.</p>
-                                <div>
+                                <h1>Indie-built apps for everyday life, hobbies, and work</h1>
+                                <p>I'm an indie developer building mobile apps across a range of ideas, from practical tools to niche interests. Available on iOS and Android.</p>
+                                <div class="hero-actions">
                                                   <a href="#apps" class="cta">Browse Apps</a>
                                                   <a href="/contact" class="cta cta-secondary">Get in Touch</a>
-                                </div>
-                                <div class="privacy-note">
-                                              OAuth branding verification requires a publicly visible privacy policy link:
-                                              <a href="/privacy">View our Privacy Policy</a>
                                 </div>
                   </div>
         </section>
@@ -510,22 +625,33 @@
         <!-- Apps -->
         <section class="work" id="apps">
                   <div class="container">
-                                <div class="section-title">Our Apps</div>
+                                <h2 class="section-title">Our Apps</h2>
                                 <div class="work-grid">
                                                   <div class="work-item">
-                                                  <img src="/images/trustlogger-logo.png" alt="TrustLogger" class="app-logo">
+                                                  <div class="work-number">Available Now</div>
+                                                  <img src="/images/icon.png" alt="TrustLogger app icon" class="app-logo app-logo--playstore" width="88" height="88" loading="lazy" decoding="async">
                                                                 <h3>TrustLogger</h3>
-                                                                <p>Track your visits to National Trust properties across the UK. Discover over 500 heritage sites, log your visits with photos and notes, and share your journey with family members.</p>
-                                                                <a href="https://play.google.com/store/apps" class="work-link" target="_blank" rel="noopener">Get on Google Play</a>
-                                                                <a href="/trustlogger/privacy" class="work-link" style="margin-top: 15px; display: inline-flex;">Privacy Policy</a>
-                                                                <a href="/trustlogger/terms" class="work-link" style="margin-top: 15px; display: inline-flex;">Terms of Service</a>
+                                                                <p>Track your visits to National Trust properties across the UK. Discover over 500 heritage sites, log your visits with photos and notes, and share your journey with friends.</p>
+                                                                <ul class="app-stats" aria-label="TrustLogger highlights">
+                                                                              <li>500+ Sites</li>
+                                                                              <li>Works Offline</li>
+                                                                              <li>Share your journey with friends</li>
+                                                                </ul>
+                                                                <div class="stacked-links">
+                                                                              <a href="https://play.google.com/store/apps/details?id=com.trustlogger.app" class="work-link work-link--primary" target="_blank" rel="noopener">Get on Google Play</a>
+                                                                              <div class="secondary-links">
+                                                                                            <a href="/trustlogger/privacy" class="work-link work-link--small">Privacy Policy</a>
+                                                                                            <a href="/trustlogger/terms" class="work-link work-link--small">Terms of Service</a>
+                                                                              </div>
+                                                                </div>
                                                   </div>
 
                                                   <div class="work-item">
                                                                 <div class="work-number">Coming Soon</div>
-                                                                <h3>More Apps</h3>
-                                                                <p>We're working on new applications to help you stay organized and explore your interests. Check back soon for updates.</p>
-                                                                <a href="/contact" class="work-link">Stay Updated</a>
+                                                                <img src="/images/Zymlo-Logo512.png" alt="Zymlo app icon" class="app-logo" width="88" height="88" loading="lazy" decoding="async">
+                                                                <h3>Zymlo</h3>
+                                                                <p>Bakery management for production planning, inventory, and daily order flow. Built to help bakeries stay on top of prep, bakes, and fulfillment.</p>
+                                                                <a href="/contact" class="work-link">Join Waitlist</a>
                                                   </div>
                                 </div>
                   </div>
@@ -538,11 +664,12 @@
                                                   <h2>Built for real people</h2>
                                                   <div class="about-text">
                                                                 <p>MidPulse Labs creates mobile applications that solve everyday problems. From tracking heritage visits to organizing your daily life, our apps are designed to be intuitive, reliable, and genuinely useful.</p>
-                                                                <p style="margin-top: 30px;">Every app works offline when you need it, syncs seamlessly across devices, and respects your privacy. We build tools we'd want to use ourselves.</p>
+                                                                <p class="about-text-spaced">Every app works offline when you need it, syncs seamlessly across devices, and respects your privacy. We build tools we'd want to use ourselves.</p>
                                                   </div>
                                 </div>
                   </div>
         </section>
+        </main>
 
         <!-- Footer -->
         <footer>
@@ -569,32 +696,19 @@
                                 </div>
 
                                 <div class="footer-bottom">
-                                                  <span>&copy; 2025 MidPulse Labs. All rights reserved.</span>
+                                                  <span>&copy; 2026 MidPulse Labs. All rights reserved.</span>
                                                   <div>
                                                                 <a href="/privacy">Privacy Policy</a>
                                                   </div>
                                 </div>
+                                <p class="footer-compliance">
+                                              OAuth branding verification requires a publicly visible privacy policy link:
+                                              <a href="/privacy">View our Privacy Policy</a>
+                                </p>
                   </div>
         </footer>
 
         <!-- Scripts -->
-        <script>
-                  // Mobile menu
-                  const menuToggle = document.getElementById('menuToggle');
-                  const nav = document.getElementById('nav');
-
-                  menuToggle.addEventListener('click', () => {
-                                nav.classList.toggle('mobile-open');
-                                menuToggle.textContent = nav.classList.contains('mobile-open') ? '✕' : '☰';
-                  });
-
-                  // Close menu on link click
-                  document.querySelectorAll('nav a').forEach(link => {
-                                link.addEventListener('click', () => {
-                                                  nav.classList.remove('mobile-open');
-                                                  menuToggle.textContent = '☰';
-                                });
-                  });
-        </script>
+        <script src="/assets/site.js"></script>
   </body>
 </html>
