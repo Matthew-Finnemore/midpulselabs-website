@@ -27,6 +27,12 @@ body {
   position: relative;
 }
 
+input,
+textarea,
+button {
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 body::before,
 body::after {
   content: '';
@@ -64,8 +70,20 @@ footer {
 }
 
 .skip-link {
+  position: absolute;
+  left: 16px;
+  top: -80px;
+  z-index: 2000;
+  padding: 10px 14px;
+  text-decoration: none;
+  color: #ffffff;
   background: var(--brand-strong);
   border-radius: 10px;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus-visible {
+  top: 16px;
 }
 
 a:focus-visible,
@@ -83,12 +101,40 @@ header {
 }
 
 header .container {
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .logo {
   letter-spacing: -0.02em;
+}
+
+header .logo {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.logo-mark {
+  height: 30px;
+  width: auto;
+  display: block;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+.logo-text {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  text-align: center;
+  white-space: nowrap;
 }
 
 nav a {
@@ -114,11 +160,12 @@ nav a:hover {
 }
 
 .hero {
-  padding-top: 138px;
-  padding-bottom: 150px;
+  padding-top: 86px;
+  padding-bottom: 68px;
 }
 
 .hero h1 {
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif !important;
   max-width: 13ch;
   letter-spacing: -0.028em;
 }
@@ -132,7 +179,7 @@ nav a:hover {
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.78));
   border: 1px solid var(--line);
   border-radius: 28px;
-  padding: clamp(28px, 5vw, 56px);
+  padding: clamp(20px, 3vw, 36px);
   box-shadow: var(--shadow);
 }
 
@@ -163,16 +210,18 @@ nav a:hover {
 }
 
 .work {
+  padding: 58px 0 78px 0;
   background: transparent;
   border-top: none;
 }
 
 .section-title {
-  margin-bottom: 36px;
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  margin-bottom: 18px;
 }
 
 .work-grid {
-  gap: 18px;
+  gap: 14px;
 }
 
 .work-item {
@@ -209,6 +258,7 @@ nav a:hover {
 }
 
 .about {
+  padding: 74px 0;
   border-top: none;
 }
 
@@ -228,9 +278,26 @@ nav a:hover {
   color: var(--muted);
 }
 
+.contact-info h2,
+.content-wrapper h2,
+.content-wrapper h3,
+.privacy-header h1,
+.privacy-body h2,
+.privacy-body h3,
+.privacy-body h4,
+.footer-brand h3 {
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+.form-group input,
+.form-group textarea,
+.submit-btn {
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
 .contact,
 .content-section {
-  padding-top: 48px;
+  padding: 20px 0 64px 0;
 }
 
 .contact-grid,
@@ -243,15 +310,16 @@ nav a:hover {
 }
 
 .contact-grid {
-  padding: 36px;
+  padding: 24px;
 }
 
 .content-wrapper {
-  padding: 42px;
+  padding: 30px;
 }
 
 .privacy-content {
   border: 1px solid var(--line);
+  padding: 46px 36px 64px 36px;
 }
 
 .form-group input,
@@ -318,6 +386,38 @@ nav a:hover {
 footer {
   background: linear-gradient(145deg, #0b1926, #101f2f);
   border-top: 1px solid #1d3246;
+  padding: 78px 0 46px 0;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 68px;
+  margin-bottom: 52px;
+  text-align: left;
+}
+
+.footer-content p {
+  margin-bottom: 0;
+}
+
+.footer-content a {
+  margin: 0;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  border-top: 1px solid #1d3246;
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #97a9bb;
+  font-size: 14px;
+}
+
+.footer-bottom a {
+  margin-left: 40px;
 }
 
 .footer-content a,
@@ -350,13 +450,22 @@ footer {
   }
 
   .hero {
-    padding-top: 88px;
-    padding-bottom: 84px;
+    padding-top: 62px;
+    padding-bottom: 42px;
+  }
+
+  .logo-mark {
+    height: 26px;
+    width: auto;
+  }
+
+  .logo-text {
+    font-size: 13px;
   }
 
   .hero .container {
     border-radius: 20px;
-    padding: 24px;
+    padding: 18px;
   }
 
   .hero h1 {
@@ -367,12 +476,28 @@ footer {
   .contact-grid,
   .content-wrapper,
   .privacy-content {
-    padding: 22px;
+    padding: 16px;
   }
 
   .doc-toc-list {
     display: grid;
     grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .footer-bottom a {
+    margin-left: 0;
+    margin-top: 10px;
   }
 }
 
