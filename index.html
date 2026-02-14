@@ -1,720 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MidPulse Labs - Innovative Mobile & Web App Development</title>
-        <meta name="theme-color" content="#0a0a0a">
-        <link rel="icon" type="image/png" href="/assets/mpl-logo.png">
-        <link rel="shortcut icon" href="/assets/mpl-logo.png">
-        <link rel="apple-touch-icon" href="/assets/mpl-logo.png">
-
-        <!-- SEO Meta Tags -->
-        <meta name="description" content="MidPulse Labs creates innovative mobile and web applications. Explore our portfolio of cutting-edge apps designed to solve real problems.">
-        <meta name="keywords" content="app development, mobile apps, web applications, software development, MidPulse Labs">
-        <meta name="author" content="MidPulse Labs">
-        <meta name="robots" content="index, follow">
-        <link rel="canonical" href="https://midpulselabs.com/">
-
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://midpulselabs.com/">
-        <meta property="og:title" content="MidPulse Labs - Innovative Mobile & Web App Development">
-        <meta property="og:description" content="Creating innovative mobile and web applications that make a difference.">
-        <meta property="og:image" content="https://midpulselabs.com/assets/mpl-logo.png">
-
-        <!-- Twitter -->
-        <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:url" content="https://midpulselabs.com/">
-        <meta property="twitter:title" content="MidPulse Labs - Innovative Mobile & Web App Development">
-        <meta property="twitter:description" content="Creating innovative mobile and web applications that make a difference.">
-        <meta property="twitter:image" content="https://midpulselabs.com/assets/mpl-logo.png">
-
-        <!-- Structured Data -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "MidPulse Labs",
-          "url": "https://midpulselabs.com",
-          "logo": "https://midpulselabs.com/assets/mpl-logo.png",
-          "description": "Creating innovative mobile and web applications",
-          "email": "contact@midpulselabs.com",
-          "sameAs": []
-        }
-        </script>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
-      <style>
-                * {
-                              margin: 0;
-                              padding: 0;
-                              box-sizing: border-box;
-                }
-
-                :root {
-                              --black: #0a0a0a;
-                              --white: #ffffff;
-                              --gray-50: #fafafa;
-                              --gray-100: #f5f5f5;
-                              --gray-200: #e8e8e8;
-                              --gray-400: #6e6e6e;
-                              --gray-600: #4f4f4f;
-                              --gray-800: #1a1a1a;
-                              --ring: #2f6fed;
-                              --accent: #0a0a0a;
-                }
-
-                html {
-                              scroll-behavior: smooth;
-                              scroll-padding-top: 120px;
-                }
-
-                body {
-                              font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
-                              background: var(--white);
-                              color: var(--black);
-                              line-height: 1.6;
-                              -webkit-font-smoothing: antialiased;
-                              -moz-osx-font-smoothing: grayscale;
-                }
-
-                .container {
-                              max-width: 1400px;
-                              margin: 0 auto;
-                              padding: 0 60px;
-                }
-
-                .skip-link {
-                              position: absolute;
-                              left: 16px;
-                              top: -80px;
-                              background: var(--black);
-                              color: var(--white);
-                              padding: 10px 14px;
-                              text-decoration: none;
-                              z-index: 2000;
-                              border-radius: 8px;
-                              transition: top 0.2s ease;
-                }
-
-                .skip-link:focus-visible {
-                              top: 16px;
-                }
-
-                a,
-                button {
-                              touch-action: manipulation;
-                }
-
-                a:focus-visible,
-                button:focus-visible {
-                              outline: 3px solid var(--ring);
-                              outline-offset: 2px;
-                }
-
-                /* Header */
-                header {
-                              border-bottom: 1px solid var(--gray-200);
-                              background: var(--white);
-                              position: sticky;
-                              top: 0;
-                              z-index: 1000;
-                }
-
-                header .container {
-                              display: flex;
-                              justify-content: space-between;
-                              align-items: center;
-                              padding-top: 30px;
-                              padding-bottom: 30px;
-                }
-
-                .logo {
-                              font-family: 'Sora', sans-serif;
-                              font-size: 22px;
-                              font-weight: 700;
-                              color: var(--black);
-                              text-decoration: none;
-                              letter-spacing: -0.03em;
-                }
-
-                nav {
-                              display: flex;
-                              gap: 50px;
-                              align-items: center;
-                }
-
-                nav a {
-                              color: var(--gray-600);
-                              text-decoration: none;
-                              font-size: 15px;
-                              font-weight: 400;
-                              transition: color 0.2s;
-                              letter-spacing: 0.01em;
-                }
-
-                nav a:hover {
-                              color: var(--black);
-                }
-
-                /* Hero */
-                .hero {
-                              padding: 180px 0 220px 0;
-                              position: relative;
-                }
-
-                .hero h1 {
-                              font-family: 'Sora', sans-serif;
-                              font-size: clamp(42px, 6vw, 68px);
-                              font-weight: 700;
-                              line-height: 1.1;
-                              letter-spacing: -0.03em;
-                              margin-bottom: 30px;
-                              max-width: 900px;
-                              text-wrap: balance;
-                }
-
-                .hero p {
-                              font-size: 18px;
-                              font-weight: 400;
-                              color: var(--gray-600);
-                              max-width: 560px;
-                              line-height: 1.6;
-                              margin-bottom: 50px;
-                }
-
-                .hero-actions {
-                              display: flex;
-                              flex-wrap: wrap;
-                              gap: 16px;
-                }
-
-                .cta {
-                              display: inline-block;
-                              padding: 20px 44px;
-                              background: var(--black);
-                              color: var(--white);
-                              text-decoration: none;
-                              font-size: 15px;
-                              font-weight: 500;
-                              transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-                              letter-spacing: 0.01em;
-                              border: 2px solid var(--black);
-                              border-radius: 12px;
-                }
-
-                .cta:hover {
-                              background: var(--gray-800);
-                              border-color: var(--gray-800);
-                              transform: translateY(-2px);
-                }
-
-                .cta-secondary {
-                              background: transparent;
-                              color: var(--black);
-                              border: 2px solid var(--black);
-                }
-
-                .cta-secondary:hover {
-                              background: var(--black);
-                              color: var(--white);
-                              transform: translateY(-2px);
-                }
-
-                /* Work Section */
-                .work {
-                              padding: 120px 0 160px 0;
-                              background: var(--gray-50);
-                              border-top: 1px solid var(--gray-200);
-                }
-
-                .section-title {
-                              font-family: 'Sora', sans-serif;
-                              font-size: clamp(30px, 3.4vw, 44px);
-                              font-weight: 700;
-                              letter-spacing: -0.02em;
-                              margin-bottom: 54px;
-                              color: var(--black);
-                              line-height: 1.15;
-                              text-wrap: balance;
-                }
-
-                .work-grid {
-                              display: grid;
-                              grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-                              gap: 24px;
-                }
-
-                .work-item {
-                              background: var(--white);
-                              padding: 64px 50px;
-                              transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-                              border: 1px solid var(--gray-200);
-                              position: relative;
-                              border-radius: 20px;
-                }
-
-                .work-item:hover {
-                              background: var(--white);
-                              transform: translateY(-4px);
-                              box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-                              border-color: var(--black);
-                }
-
-                .work-number {
-                              font-family: 'Sora', sans-serif;
-                              font-size: 13px;
-                              color: var(--gray-400);
-                              margin-bottom: 35px;
-                              font-weight: 500;
-                              letter-spacing: 0.1em;
-                }
-
-                .app-logo {
-                              width: 88px;
-                              height: 88px;
-                              border-radius: 20px;
-                              margin-bottom: 30px;
-                              object-fit: cover;
-                              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-                }
-
-                .app-logo--playstore {
-                              border-radius: 22%;
-                }
-
-                .work-item h3 {
-                              font-family: 'Sora', sans-serif;
-                              font-size: 28px;
-                              font-weight: 700;
-                              margin-top: 0;
-                              margin-bottom: 20px;
-                              letter-spacing: -0.01em;
-                              line-height: 1.25;
-                              overflow: visible;
-                }
-
-                .work-item p {
-                              color: var(--gray-600);
-                              font-size: 17px;
-                              line-height: 1.7;
-                              margin-bottom: 35px;
-                }
-
-                .app-stats {
-                              list-style: none;
-                              display: flex;
-                              flex-wrap: wrap;
-                              gap: 10px;
-                              margin-bottom: 30px;
-                }
-
-                .app-stats li {
-                              font-size: 12px;
-                              font-weight: 700;
-                              letter-spacing: 0.04em;
-                              text-transform: uppercase;
-                              color: var(--black);
-                              background: var(--gray-100);
-                              border: 1px solid var(--gray-200);
-                              border-radius: 999px;
-                              padding: 8px 12px;
-                }
-
-                .work-link {
-                              color: var(--black);
-                              text-decoration: none;
-                              font-size: 12px;
-                              font-weight: 600;
-                              letter-spacing: 0.03em;
-                              text-transform: uppercase;
-                              display: inline-flex;
-                              align-items: center;
-                              justify-content: center;
-                              padding: 10px 14px;
-                              border-radius: 10px;
-                              border: 1px solid var(--gray-200);
-                              background: var(--white);
-                              transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-                }
-
-                .work-link:hover {
-                              transform: translateY(-1px);
-                              background: var(--gray-100);
-                              border-color: var(--gray-400);
-                }
-
-                .stacked-links {
-                              display: flex;
-                              flex-direction: column;
-                              align-items: flex-start;
-                              gap: 10px;
-                }
-
-                .secondary-links {
-                              display: flex;
-                              gap: 8px;
-                              flex-wrap: wrap;
-                }
-
-                .work-link--primary {
-                              background: var(--black);
-                              color: var(--white);
-                              border-color: var(--black);
-                              font-size: 14px;
-                              font-weight: 700;
-                              padding: 14px 18px;
-                }
-
-                .work-link--primary:hover {
-                              background: var(--gray-800);
-                              border-color: var(--gray-800);
-                }
-
-                .work-link--small {
-                              font-size: 10px;
-                              padding: 6px 10px;
-                              color: var(--gray-600);
-                              border-color: var(--gray-200);
-                }
-
-                /* About Section */
-                .about {
-                              padding: 160px 0;
-                              border-top: 1px solid var(--gray-200);
-                }
-
-                .about-content {
-                              display: grid;
-                              grid-template-columns: 1fr 1.6fr;
-                              gap: 120px;
-                              align-items: start;
-                }
-
-                .about h2 {
-                              font-family: 'Sora', sans-serif;
-                              font-size: 36px;
-                              font-weight: 700;
-                              letter-spacing: -0.02em;
-                              line-height: 1.2;
-                }
-
-                .about-text {
-                              font-size: 19px;
-                              line-height: 1.75;
-                              color: var(--gray-600);
-                              font-weight: 400;
-                }
-
-                .about-text-spaced {
-                              margin-top: 30px;
-                }
-
-                /* Footer */
-                footer {
-                              background: var(--black);
-                              color: var(--white);
-                              padding: 100px 0 60px 0;
-                }
-
-                .footer-content {
-                              display: grid;
-                              grid-template-columns: 2fr 1fr 1fr;
-                              gap: 100px;
-                              margin-bottom: 80px;
-                }
-
-                .footer-brand h3 {
-                              font-family: 'Sora', sans-serif;
-                              font-size: 28px;
-                              font-weight: 700;
-                              margin-bottom: 20px;
-                              letter-spacing: -0.03em;
-                }
-
-                .footer-brand p {
-                              color: var(--gray-400);
-                              font-size: 16px;
-                              line-height: 1.7;
-                              max-width: 400px;
-                }
-
-                .footer-section h4 {
-                              font-size: 14px;
-                              font-weight: 600;
-                              text-transform: uppercase;
-                              letter-spacing: 0.1em;
-                              margin-bottom: 25px;
-                              color: var(--gray-400);
-                }
-
-                .footer-section a {
-                              display: block;
-                              color: var(--white);
-                              text-decoration: none;
-                              margin-bottom: 15px;
-                              font-size: 15px;
-                              transition: color 0.2s;
-                }
-
-                .footer-section a:hover {
-                              color: var(--gray-400);
-                }
-
-                .footer-bottom {
-                              border-top: 1px solid var(--gray-800);
-                              padding-top: 40px;
-                              display: flex;
-                              justify-content: space-between;
-                              align-items: center;
-                              color: var(--gray-400);
-                              font-size: 14px;
-                }
-
-                .footer-bottom a {
-                              color: var(--gray-400);
-                              text-decoration: none;
-                              margin-left: 40px;
-                }
-
-                .footer-bottom a:hover {
-                              color: var(--white);
-                }
-
-                .footer-compliance {
-                              margin-top: 24px;
-                              color: var(--gray-400);
-                              font-size: 14px;
-                }
-
-                .footer-compliance a {
-                              color: var(--white);
-                              text-decoration: underline;
-                }
-
-                /* Mobile Menu */
-                .mobile-menu-toggle {
-                              display: none;
-                              background: none;
-                              border: none;
-                              font-size: 24px;
-                              color: var(--black);
-                }
-
-                #apps {
-                              scroll-margin-top: 140px;
-                }
-
-                /* Responsive */
-                @media (max-width: 968px) {
-                              .container {
-                                                padding: 0 30px;
-                              }
-
-                              nav {
-                                                display: none;
-                              }
-
-                              nav.mobile-open {
-                                                display: flex;
-                                                flex-direction: column;
-                                                position: fixed;
-                                                top: 81px;
-                                                left: 0;
-                                                right: 0;
-                                                background: var(--white);
-                                                padding: 40px 30px;
-                                                gap: 30px;
-                                                border-bottom: 1px solid var(--gray-200);
-                                                align-items: flex-start;
-                              }
-
-                              .mobile-menu-toggle {
-                                                display: block;
-                              }
-
-                              .hero {
-                                                padding: 100px 0 120px 0;
-                              }
-
-                              .hero h1 {
-                                                font-size: 42px;
-                              }
-
-                              .hero-actions {
-                                                flex-direction: column;
-                                                align-items: stretch;
-                              }
-
-                              .work-grid {
-                                                grid-template-columns: 1fr;
-                              }
-
-                              .work-item {
-                                                padding: 50px 30px;
-                              }
-
-                              .about-content {
-                                                grid-template-columns: 1fr;
-                                                gap: 40px;
-                              }
-
-                              .footer-content {
-                                                grid-template-columns: 1fr;
-                                                gap: 50px;
-                              }
-
-                              .footer-bottom {
-                                                flex-direction: column;
-                                                gap: 20px;
-                                                align-items: flex-start;
-                              }
-
-                              .footer-bottom a {
-                                                margin-left: 0;
-                                                margin-top: 10px;
-                              }
-                }
-
-                @media (prefers-reduced-motion: reduce) {
-                              html {
-                                                scroll-behavior: auto;
-                              }
-
-                              * {
-                                                animation: none !important;
-                                                transition: none !important;
-                              }
-                }
-            </style>
-          <link rel="stylesheet" href="/assets/site.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MidPulse Labs - Innovative Mobile & Web App Development</title>
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" type="image/png" href="/assets/mpl-logo.png">
+  <link rel="shortcut icon" href="/assets/mpl-logo.png">
+  <link rel="apple-touch-icon" href="/assets/mpl-logo.png">
+
+  <meta name="description" content="MidPulse Labs creates innovative mobile and web applications. Explore our portfolio of cutting-edge apps designed to solve real problems.">
+  <meta name="keywords" content="app development, mobile apps, web applications, software development, MidPulse Labs">
+  <meta name="author" content="MidPulse Labs">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://midpulselabs.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://midpulselabs.com/">
+  <meta property="og:title" content="MidPulse Labs - Innovative Mobile & Web App Development">
+  <meta property="og:description" content="Creating innovative mobile and web applications that make a difference.">
+  <meta property="og:image" content="https://midpulselabs.com/assets/mpl-logo.png">
+
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://midpulselabs.com/">
+  <meta property="twitter:title" content="MidPulse Labs - Innovative Mobile & Web App Development">
+  <meta property="twitter:description" content="Creating innovative mobile and web applications that make a difference.">
+  <meta property="twitter:image" content="https://midpulselabs.com/assets/mpl-logo.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "MidPulse Labs",
+    "url": "https://midpulselabs.com",
+    "logo": "https://midpulselabs.com/assets/mpl-logo.png",
+    "description": "Creating innovative mobile and web applications",
+    "email": "contact@midpulselabs.com",
+    "sameAs": []
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ink: #13202b;
+      --muted: #4f6274;
+      --surface: #ffffff;
+      --surface-soft: #f4f8fb;
+      --line: #d7e3ee;
+      --line-strong: #b8ccde;
+      --brand: #0c7d67;
+      --brand-strong: #0a5f4f;
+      --brand-soft: #e8f6f1;
+      --accent: #f1a53b;
+      --ring: #1f6feb;
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+
+    body {
+      font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--ink);
+      background: var(--surface-soft);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+
+    .skip-link {
+      position: absolute; left: 16px; top: -80px;
+      background: var(--brand-strong); color: #fff;
+      padding: 10px 14px; text-decoration: none; z-index: 2000;
+      border-radius: 10px; transition: top 0.2s ease;
+    }
+    .skip-link:focus-visible { top: 16px; }
+
+    a, button { touch-action: manipulation; }
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--ring); outline-offset: 2px;
+    }
+
+    header {
+      position: sticky; top: 0; z-index: 1000;
+      border-bottom: 1px solid var(--line);
+    }
+    header .container {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 14px; padding-bottom: 14px;
+    }
+    .logo {
+      display: inline-flex; flex-direction: column; align-items: center;
+      gap: 4px; text-decoration: none; line-height: 1;
+    }
+    .logo-mark { height: 30px; width: auto; display: block; }
+    .logo-text {
+      font-size: 15px; font-weight: 700; letter-spacing: -0.02em;
+      color: var(--ink); white-space: nowrap;
+    }
+    nav { display: flex; gap: 6px; align-items: center; }
+    nav a {
+      color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500;
+      padding: 8px 16px; border-radius: 999px; border: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s, background 0.2s;
+    }
+    nav a:hover { color: var(--ink); border-color: var(--line); background: rgba(255,255,255,0.8); }
+    .mobile-menu-toggle {
+      display: none; background: none; border: none; font-size: 24px;
+      color: var(--ink); border-radius: 10px; min-width: 44px; min-height: 44px; cursor: pointer;
+    }
+
+    .hero { position: relative; padding: 100px 0 80px; overflow: hidden; }
+    .hero h1 {
+      font-family: 'Sora', sans-serif;
+      font-size: clamp(40px, 5.5vw, 64px);
+      font-weight: 700; line-height: 1.08;
+      letter-spacing: -0.03em; text-wrap: balance;
+    }
+    .hero p { font-size: 18px; color: var(--muted); max-width: 52ch; line-height: 1.7; }
+
+    #apps { scroll-margin-top: 120px; }
+
+    @media (max-width: 968px) {
+      .container { padding: 0 24px; }
+      nav { display: none; }
+      nav.mobile-open {
+        display: flex; flex-direction: column; position: fixed;
+        top: 80px; left: 0; right: 0;
+        background: rgba(244, 248, 251, 0.98);
+        backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+        padding: 32px 24px; gap: 8px;
+        border-bottom: 1px solid var(--line); align-items: stretch;
+      }
+      nav.mobile-open a { padding: 14px 20px; font-size: 16px; border-radius: 12px; }
+      .mobile-menu-toggle { display: flex; align-items: center; justify-content: center; }
+      .hero { padding: 60px 0 50px; }
+      .hero h1 { font-size: clamp(32px, 8vw, 44px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/site.css">
 </head>
-  <body>
-        <a href="#main-content" class="skip-link">Skip to main content</a>
-        <!-- Header -->
-        <header>
-                  <div class="container">
-                                <a href="/" class="logo"><img src="/assets/mpl-logo.png" alt="" class="logo-mark" width="65" height="38" decoding="async"><span class="logo-text">MidPulse Labs</span></a>
-                                <nav id="nav" aria-label="Primary">
-                                                  <a href="/">Home</a>
-                                                  <a href="#apps">Apps</a>
-                                                  <a href="/contact">Contact</a>
-                                                  <a href="/privacy">Privacy</a>
-                                </nav>
-                                <button class="mobile-menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav" aria-expanded="false">
-                                                  ☰
-                                </button>
-                  </div>
-        </header>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-        <main id="main-content">
-        <!-- Hero -->
-        <section class="hero">
-                  <div class="container">
-                                <h1>Indie-built apps for everyday life, hobbies, and work</h1>
-                                <p>I'm an indie developer building mobile apps across a range of ideas, from practical tools to niche interests. Available on iOS and Android.</p>
-                                <div class="hero-actions">
-                                                  <a href="#apps" class="cta">Browse Apps</a>
-                                                  <a href="/contact" class="cta cta-secondary">Get in Touch</a>
-                                </div>
-                  </div>
-        </section>
+  <header>
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="/assets/mpl-logo.png" alt="" class="logo-mark" width="65" height="38" decoding="async">
+        <span class="logo-text">MidPulse Labs</span>
+      </a>
+      <nav id="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="#apps">Apps</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+      <button class="mobile-menu-toggle" id="menuToggle" type="button" aria-label="Toggle navigation menu" aria-controls="nav" aria-expanded="false">&#9776;</button>
+    </div>
+  </header>
 
-        <!-- Apps -->
-        <section class="work" id="apps">
-                  <div class="container">
-                                <h2 class="section-title">Our Apps</h2>
-                                <div class="work-grid">
-                                                  <div class="work-item">
-                                                  <div class="work-number">Available Now</div>
-                                                  <img src="/images/icon.png" alt="TrustLogger app icon" class="app-logo app-logo--playstore" width="88" height="88" loading="lazy" decoding="async">
-                                                                <h3>TrustLogger</h3>
-                                                                <p>Track your visits to National Trust properties across the UK. Discover over 500 heritage sites, log your visits with photos and notes, and share your journey with friends.</p>
-                                                                <ul class="app-stats" aria-label="TrustLogger highlights">
-                                                                              <li>500+ Sites</li>
-                                                                              <li>Works Offline</li>
-                                                                              <li>Share your journey with friends</li>
-                                                                </ul>
-                                                                <div class="stacked-links">
-                                                                              <a href="https://play.google.com/store/apps/details?id=com.trustlogger.app" class="work-link work-link--primary" target="_blank" rel="noopener">Get on Google Play</a>
-                                                                              <div class="secondary-links">
-                                                                                            <a href="/trustlogger/privacy" class="work-link work-link--small">Privacy Policy</a>
-                                                                                            <a href="/trustlogger/terms" class="work-link work-link--small">Terms of Service</a>
-                                                                              </div>
-                                                                </div>
-                                                  </div>
+  <main id="main-content">
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="orb orb--1"></div>
+        <div class="orb orb--2"></div>
+        <div class="orb orb--3"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <h1>Indie-built apps for everyday life, hobbies, and&nbsp;work</h1>
+          <p>I'm an indie developer building mobile apps across a range of ideas, from practical tools to niche interests. Available on iOS and Android.</p>
+          <div class="hero-actions">
+            <a href="#apps" class="btn btn--primary">Browse Apps</a>
+            <a href="/contact" class="btn btn--ghost">Get in Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                                                  <div class="work-item">
-                                                                <div class="work-number">Coming Soon</div>
-                                                                <img src="/images/Zymlo-Logo512.png" alt="Zymlo app icon" class="app-logo" width="88" height="88" loading="lazy" decoding="async">
-                                                                <h3>Zymlo</h3>
-                                                                <p>Bakery management for production planning, inventory, and daily order flow. Built to help bakeries stay on top of prep, bakes, and fulfillment.</p>
-                                                                <a href="/contact" class="work-link">Join Waitlist</a>
-                                                  </div>
-                                </div>
-                  </div>
-        </section>
+    <section class="apps" id="apps">
+      <div class="container">
+        <h2 class="section-heading" data-reveal>Our Apps</h2>
 
-        <!-- About -->
-        <section class="about">
-                  <div class="container">
-                                <div class="about-content">
-                                                  <h2>Built for real people</h2>
-                                                  <div class="about-text">
-                                                                <p>MidPulse Labs creates mobile applications that solve everyday problems. From tracking heritage visits to organizing your daily life, our apps are designed to be intuitive, reliable, and genuinely useful.</p>
-                                                                <p class="about-text-spaced">Every app works offline when you need it, syncs seamlessly across devices, and respects your privacy. We build tools we'd want to use ourselves.</p>
-                                                  </div>
-                                </div>
-                  </div>
-        </section>
-        </main>
+        <article class="showcase" data-reveal>
+          <div class="showcase__visual">
+            <div class="showcase__icon-wrap">
+              <img src="/images/icon.png" alt="TrustLogger app icon" class="showcase__icon showcase__icon--playstore" width="120" height="120" loading="lazy" decoding="async">
+            </div>
+            <span class="showcase__status showcase__status--live">Available Now</span>
+          </div>
+          <div class="showcase__body">
+            <h3 class="showcase__title">TrustLogger</h3>
+            <p class="showcase__desc">Track your visits to National Trust properties across the UK. Discover over 500 heritage sites, log your visits with photos and notes, and share your journey with friends.</p>
+            <ul class="showcase__tags" aria-label="TrustLogger highlights">
+              <li>500+ Sites</li>
+              <li>Works Offline</li>
+              <li>Share with Friends</li>
+            </ul>
+            <div class="showcase__actions">
+              <a href="https://play.google.com/store/apps/details?id=com.trustlogger.app" class="btn btn--primary" target="_blank" rel="noopener">Get on Google Play</a>
+              <div class="showcase__meta-links">
+                <a href="/trustlogger/privacy">Privacy Policy</a>
+                <a href="/trustlogger/terms">Terms of Service</a>
+              </div>
+            </div>
+          </div>
+        </article>
 
-        <!-- Footer -->
-        <footer>
-                  <div class="container">
-                                <div class="footer-content">
-                                                  <div class="footer-brand">
-                                                                <h3>MidPulse Labs</h3>
-                                                                <p>Creating useful mobile applications for everyday life. Download our apps or get in touch with questions and feedback.</p>
-                                                  </div>
+        <hr class="showcase-divider" aria-hidden="true">
 
-                                                  <div class="footer-section">
-                                                                <h4>Navigation</h4>
-                                                                <a href="/">Home</a>
-                                                                <a href="#apps">Apps</a>
-                                                                <a href="/contact">Contact</a>
-                                                                <a href="/privacy">Privacy</a>
-                                                  </div>
+        <article class="showcase showcase--alt" data-reveal>
+          <div class="showcase__visual">
+            <div class="showcase__icon-wrap">
+              <img src="/images/Zymlo-Logo512.png" alt="Zymlo app icon" class="showcase__icon" width="120" height="120" loading="lazy" decoding="async">
+            </div>
+            <span class="showcase__status">Coming Soon</span>
+          </div>
+          <div class="showcase__body">
+            <h3 class="showcase__title">Zymlo</h3>
+            <p class="showcase__desc">Bakery management for production planning, inventory, and daily order flow. Built to help bakeries stay on top of prep, bakes, and fulfillment.</p>
+            <div class="showcase__actions">
+              <a href="/contact" class="btn btn--ghost">Join Waitlist</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-                                                  <div class="footer-section">
-                                                                <h4>Connect</h4>
-                                                                <a href="mailto:contact@midpulselabs.com">Email</a>
-                                                                <a href="/contact">Contact Form</a>
-                                                  </div>
-                                </div>
+    <section class="about">
+      <div class="container">
+        <div class="about__inner" data-reveal>
+          <h2 class="about__heading">Built for real people</h2>
+          <div class="about__text">
+            <p>MidPulse Labs creates mobile applications that solve everyday problems. From tracking heritage visits to organizing your daily life, our apps are designed to be intuitive, reliable, and genuinely useful.</p>
+            <p>Every app works offline when you need it, syncs seamlessly across devices, and respects your privacy. We build tools we'd want to use ourselves.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-                                <div class="footer-bottom">
-                                                  <span>&copy; 2026 MidPulse Labs. All rights reserved.</span>
-                                                  <div>
-                                                                <a href="/privacy">Privacy Policy</a>
-                                                  </div>
-                                </div>
-                                <p class="footer-compliance">
-                                              OAuth branding verification requires a publicly visible privacy policy link:
-                                              <a href="/privacy">View our Privacy Policy</a>
-                                </p>
-                  </div>
-        </footer>
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>MidPulse Labs</h3>
+          <p>Creating useful mobile applications for everyday life. Download our apps or get in touch with questions and feedback.</p>
+        </div>
+        <div class="footer-section">
+          <h4>Navigation</h4>
+          <a href="/">Home</a>
+          <a href="#apps">Apps</a>
+          <a href="/contact">Contact</a>
+          <a href="/privacy">Privacy</a>
+        </div>
+        <div class="footer-section">
+          <h4>Connect</h4>
+          <a href="mailto:contact@midpulselabs.com">Email</a>
+          <a href="/contact">Contact Form</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-current-year>2026</span> MidPulse Labs. All rights reserved.</span>
+        <div>
+          <a href="/privacy">Privacy Policy</a>
+        </div>
+      </div>
+      <p class="footer-compliance">
+        OAuth branding verification requires a publicly visible privacy policy link:
+        <a href="/privacy">View our Privacy Policy</a>
+      </p>
+    </div>
+  </footer>
 
-        <!-- Scripts -->
-        <script src="/assets/site.js"></script>
-  </body>
+  <script src="/assets/site.js"></script>
+</body>
 </html>
-
-
-
-

@@ -80,14 +80,25 @@ trustlogger://auth/callback
 trustlogger://
 ```
 
-**Email Template:**
+**Email Templates:**
 
-Go to **Authentication → Email Templates → Reset Password**
+Go to **Authentication  Email Templates  Reset Password**
 
 Change the button URL to:
 ```html
 <a href="{{ .ConfirmationURL }}">Reset Password</a>
 ```
+
+Go to **Authentication  Email Templates  Confirm Signup**
+
+Change the button URL to:
+```html
+<a href="{{ .ConfirmationURL }}">Verify Email</a>
+```
+
+**Important:** Ensure signup confirmation redirects to a path under `/auth/*`
+(for example `https://midpulselabs.com/auth/callback`) so the universal link
+opens the app.
 
 ### 5. Rebuild Your App
 
